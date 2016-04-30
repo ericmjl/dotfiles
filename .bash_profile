@@ -5,7 +5,7 @@ export PATH="/Users/ericmjl/anaconda/bin:$PATH"
 # export DYLD_FALLBACK_LIBRARY_PATH="/Users/gwulfs/anaconda/lib/"
 
 # added by Eric to shortcut to different directories
-export github="/Users/ericmjl/Documents/github/"
+export github="/Users/ericmjl/Documents/github"
 export pin="$github/protein-interaction-network"
 export protconv="$github/protein-convolutional-nets"
 export graphfp="$github/graph-fingerprint"
