@@ -1,0 +1,7 @@
+binstar_upload: yes
+
+channels:
+  - ericmjl
+  - defaults
+
+always_yes: True
