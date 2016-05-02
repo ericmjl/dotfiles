@@ -1,3 +1,8 @@
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+
+
 # added by Anaconda3 2.5.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
 
@@ -6,7 +11,7 @@ export github="$HOME/Documents/github"
 export pin="$github/protein-interaction-network"
 export protconv="$github/protein-convolutional-nets"
 export graphfp="$github/graph-fingerprint"
-export dotfiles="$HOME/.dotfiles"
+export dotfiles="$HOME/dotfiles"
 
 # added by Eric to access Tex
 export PATH="$PATH:/Library/Tex"
