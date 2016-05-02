@@ -1,5 +1,6 @@
 # Link to Anaconda Python
 export PATH="$HOME/anaconda/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # added by Eric to shortcut to different directories
 export github="$HOME/Documents/github"
@@ -37,4 +38,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Place conda-auto-env under github directory
 source $github/conda-auto-env/conda_auto_env.sh
 
+# Aliases
 alias ls='ls -GFla'
+alias ..='cd ..'
