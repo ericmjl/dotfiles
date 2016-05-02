@@ -18,7 +18,7 @@ My dotfiles! :D I use these to customize my terminal wherever I go.
 Fork the repository before continuing.
 
     $ cd ~
-    $ git clone git@github.com:[username]/dotfiles
+    $ git clone git@github.com:[**username**]/dotfiles
     $ cd dotfiles
     $ bash install.sh
 
