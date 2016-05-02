@@ -6,6 +6,7 @@ export github="$HOME/Documents/github"
 export pin="$github/protein-interaction-network"
 export protconv="$github/protein-convolutional-nets"
 export graphfp="$github/graph-fingerprint"
+export dotfiles="$github/dotfiles"
 
 # added by Eric to access Tex
 export PATH="$PATH:/Library/Tex"
@@ -22,4 +23,3 @@ export PS1="\[\033[36m\]\u \[\033[33;1m\]:: \[\033[33;1m\]\W \033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFla'
-
