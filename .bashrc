@@ -16,7 +16,22 @@ export PATH="$PATH:$HOME/pypy/bin"
 export PATH="$PATH:$HOME/pypy3/bin"
 
 # Customizes the bash shell colours
-export PS1="\[\033[36m\]\u \[\033[m\]at \[\033[32m\]\h :: \[\033[33;1m\]\W \[\033[m\]\$ "
+
+export bold='';
+export reset="\e[0m";
+export black="\e[1;30m";
+export blue="\e[1;34m";
+export cyan="\e[1;36m";
+export green="\e[1;32m";
+export orange="\e[1;33m";
+export purple="\e[1;35m";
+export red="\e[1;31m";
+export violet="\e[1;35m";
+export white="\e[1;37m";
+export yellow="\e[1;33m";
+
+# Set the terminal title and prompt.
+export PS1="\[$cyan\]\u \[$yellow\]at \[$green\]\h \[$yellow\]in \[$red\]\W \[$green\]\$ $reset"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
