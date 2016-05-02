@@ -16,7 +16,6 @@ export PATH="$PATH:$HOME/pypy/bin"
 export PATH="$PATH:$HOME/pypy3/bin"
 
 # Customizes the bash shell colours
-
 export bold='';
 export reset="\e[0m";
 export black="\e[1;30m";
