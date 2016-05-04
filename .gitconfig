@@ -29,6 +29,10 @@
 	editor = pico
 [push]
 	default = simple
+[color "branch"]
+    current = yellow ul
+    local = yellow
+    remote = green
 [color "diff"]
 	meta = blue black bold
 [color "status"]
