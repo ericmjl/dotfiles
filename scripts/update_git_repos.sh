@@ -1,0 +1,1 @@
+python $dotfiles/scripts/update_git_repos.py
