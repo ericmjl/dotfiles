@@ -11,4 +11,7 @@ for f in os.listdir(os.getcwd()):
         print('Currently in directory {0}'.format(p))
         os.chdir(p)
         os.system('git pull')
+        os.system('git add .')
+        os.system('git commit -m "en masse update"')
+        os.system('git push')
         os.chdir('..')
