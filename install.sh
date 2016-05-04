@@ -12,4 +12,4 @@ ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application
 ln -svf "$HOME/dotfiles/.gitconfig" ~
 
 # Symlink script for updating all git repositories
-ln -svf "$HOME/dotfiles/scripts/update_git_repos.sh" "$github"
+ln -svf "$HOME/dotfiles/scripts/pull_git_repos.sh" "$github"
