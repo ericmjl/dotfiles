@@ -3,5 +3,6 @@ binstar_upload: yes
 channels:
   - ericmjl
   - defaults
+  - conda-forge
 
 always_yes: True
