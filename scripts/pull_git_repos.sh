@@ -1,1 +1,1 @@
-python $dotfiles/scripts/update_git_repos.py
+python $dotfiles/scripts/pull_git_repos.py
