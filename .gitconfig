@@ -1,0 +1,38 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	name = Eric J. Ma
+	email = ericmajinglong@gmail.com
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[color]
+	ui = auto
+[alias]
+	branches = !legit branches
+	graft = !legit graft
+	harvest = !legit harvest
+	publish = !legit publish
+	unpublish = !legit unpublish
+	sprout = !legit sprout
+	sync = !legit sync
+	switch = !legit switch
+	resync = !legit resync
+[core]
+	editor = pico
+[push]
+	default = simple
+[color "diff"]
+	meta = blue black bold
+[color "status"]
+    added = green
+    changed = blue
+    untracked = magenta
+    deleted = red
