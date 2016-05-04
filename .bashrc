@@ -31,7 +31,7 @@ export white="\e[1;37m";
 export yellow="\e[1;33m";
 
 # Set the terminal title and prompt.
-export PS1="\[$cyan\]\u \[$yellow\]at \[$green\]\h \[$yellow\]in \[$red\]\W \[$green\]\$ \[$reset\]"
+export PS1="$bold\[$orange\][ \[$cyan\]\u \[$yellow\]at \[$green\]\h \[$yellow\]in \[$red\]\W \[$orange\]]\[$green\] \$ \[$reset\]"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
