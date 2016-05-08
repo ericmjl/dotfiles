@@ -65,7 +65,7 @@
 	<key>UseBrightBold</key>
 	<true/>
 	<key>name</key>
-	<string>Homebrew</string>
+	<string>homebrew_em_custom</string>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>
