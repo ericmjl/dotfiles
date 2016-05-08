@@ -20,6 +20,7 @@ fi
 # If OS is Mac OS X, then symlink Sublime Text
 case "$OSTYPE" in
   darwin*)
+    # Symlink Sublime Text as a command line app
     ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime" 
     # Symlink the sublime 3 preferences.
     ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
