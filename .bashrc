@@ -38,6 +38,12 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Place conda-auto-env under github directory
 source $github/conda-auto-env/conda_auto_env.sh
 
-# Aliases
-alias ls='ls -GFla --color'
+# Aliases for ls and other things.
+case "$OSTYPE" in
+  solaris*) echo "SOLARIS" ;;
+  darwin*)  alias ls='ls -GFla' ;;
+  linux*)   alias ls='ls -Fla --color' ;;
+  bsd*)     echo "BSD" ;;
+  *)        echo "unknown: $OSTYPE" ;;
+esac
 alias ..='cd ..'
