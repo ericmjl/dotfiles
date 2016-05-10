@@ -39,5 +39,5 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 source $github/conda-auto-env/conda_auto_env.sh
 
 # Aliases
-alias ls='ls -GFla'
+alias ls='ls -GFla --color'
 alias ..='cd ..'
