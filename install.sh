@@ -12,9 +12,20 @@ if [ ! -d "$HOME/bin" ]; then
     mkdir $HOME/bin
 fi
 
-# Make the "/.ssh" directory under HOME.
+# Make the SSH directory under HOME.
 if [ ! -d "$HOME/.ssh" ]; then
     mkdir $HOME/.ssh
+fi
+
+
+# Make the Documents directory under HOME.
+if [ ! -d "$HOME/Documents" ]; then
+    mkdir $HOME/Documents
+fi
+
+# Make the github directory under HOME.
+if [ ! -d "$HOME/Documents/github" ]; then
+    mkdir $HOME/Documents/github
 fi
 
 # If OS is Mac OS X, then symlink Sublime Text
@@ -32,7 +43,6 @@ ln -svf "$HOME/dotfiles/.bashrc" ~
 
 # Symlink condarc
 ln -svf "$HOME/dotfiles/.condarc" ~
-
 
 # Symlink gitconfig
 ln -svf "$HOME/dotfiles/.gitconfig" ~
