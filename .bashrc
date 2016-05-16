@@ -1,3 +1,11 @@
+# For Rous only
+if [[ 'hostname' -eq 'rous' ]]; then
+    module load beast/1.8.0
+    module load clustalo
+    module load muscle
+    module load RAxML
+fi
+
 # Link to Anaconda Python
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
