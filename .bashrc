@@ -1,5 +1,5 @@
 # For Rous only
-if [[ 'hostname' -eq 'rous' ]]; then
+if [[ "$HOSTNAME" == rous ]]; then
     module load beast/1.8.0
     module load clustalo
     module load muscle
