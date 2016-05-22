@@ -6,6 +6,9 @@ if [[ "$HOSTNAME" == rous ]]; then
     module load RAxML
 fi
 
+# Link to LuaJIT
+export PATH="$HOME/luajit/bin:$PATH"
+
 # Link to Anaconda Python
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
