@@ -9,7 +9,7 @@ fi
 # Link to LuaJIT
 export PATH="$HOME/luajit/bin:$PATH"
 
-# Link to Anaconda Python
+# Link to Anaconda Python and other binaries folders
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
@@ -19,6 +19,7 @@ export pin="$github/protein-interaction-network"
 export protconv="$github/protein-convolutional-nets"
 export graphfp="$github/graph-fingerprint"
 export dotfiles="$HOME/dotfiles"
+export anaconda="$HOME/anaconda"
 
 # added by Eric to access Tex
 export PATH="$PATH:/Library/Tex"
