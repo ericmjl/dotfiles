@@ -116,6 +116,8 @@ source $github/conda-auto-env/conda_auto_env.sh
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
   darwin*)  alias ls='ls -GFla' ;;
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true ;;
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true ;;
   linux*)   alias ls='ls -Fla --color' ;;
   bsd*)     echo "BSD" ;;
   *)        echo "unknown: $OSTYPE" ;;
