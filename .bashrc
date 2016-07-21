@@ -42,6 +42,7 @@ violet="\e[1;35m";
 white="\e[1;37m";
 yellow="\e[1;33m";
 
+# Customize prompt to add git status where applicable.
 prompt_git() {
     local s='';
     local branchName='';
@@ -112,12 +113,14 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Place conda-auto-env under github directory
 source $github/conda-auto-env/conda_auto_env.sh
 
-# Aliases for ls and other things.
+# OS-specific things.
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
-  darwin*)  alias ls='ls -GFla' ;;
-    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true ;;
-    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true ;;
+  darwin*)
+    alias ls='ls -GFla'
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+    ;;
   linux*)   alias ls='ls -Fla --color' ;;
   bsd*)     echo "BSD" ;;
   *)        echo "unknown: $OSTYPE" ;;
