@@ -110,8 +110,8 @@ export PS1;
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-# Place conda-auto-env under github directory
-source $github/conda-auto-env/conda_auto_env.sh
+# # Place conda-auto-env under github directory
+# source $github/conda-auto-env/conda_auto_env.sh
 
 # OS-specific things.
 case "$OSTYPE" in
