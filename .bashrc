@@ -110,9 +110,8 @@ export PS1;
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-# Temporarily disabled conda-auto-env 22 July 2016
-# # Place conda-auto-env under github directory
-# source $github/conda-auto-env/conda_auto_env.sh
+# Place conda-auto-env under github directory
+source $github/conda-auto-env/conda_auto_env.sh
 
 # OS-specific things.
 case "$OSTYPE" in
