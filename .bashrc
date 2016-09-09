@@ -14,7 +14,7 @@ export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # added by Eric to shortcut to different directories
-export github="$HOME/Documents/github"
+export github="$HOME/github"
 export pin="$github/protein-interaction-network"
 export protconv="$github/protein-convolutional-nets"
 export graphfp="$github/graph-fingerprint"
