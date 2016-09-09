@@ -24,17 +24,17 @@ if [ ! -d "$HOME/Documents" ]; then
 fi
 
 # Make the github directory under HOME.
-if [ ! -d "$HOME/Documents/github" ]; then
-    mkdir $HOME/Documents/github
+if [ ! -d "$HOME/github" ]; then
+    mkdir $HOME/github
 fi
 
 # If OS is Mac OS X, then symlink Sublime Text
 case "$OSTYPE" in
   darwin*)
     # Symlink Sublime Text as a command line app
-    ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime" 
+    # ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime" 
     # Symlink the sublime 3 preferences.
-    ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+    # ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
     # echo "checking to see if anaconda is installed."
     # if [ ! -d "$HOME/anaconda" ]; then
