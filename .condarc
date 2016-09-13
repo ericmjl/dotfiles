@@ -1,8 +1,8 @@
 anaconda_upload: true
 
 channels:
+  - conda-forge
   - ericmjl
   - defaults
-  - conda-forge
 
 always_yes: True
