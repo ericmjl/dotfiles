@@ -9,6 +9,9 @@ fi
 # Link to LuaJIT
 export PATH="$HOME/luajit/bin:$PATH"
 
+# Add /opt/local/(bin, sbin) for MacPorts
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
 # Link to Anaconda Python and other binaries folders
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
@@ -111,7 +114,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Place conda-auto-env under github directory
-source $github/conda-auto-env/conda_auto_env.sh
+# source $github/software/conda-auto-env/conda_auto_env.sh
 
 # OS-specific things.
 case "$OSTYPE" in
