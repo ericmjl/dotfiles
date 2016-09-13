@@ -5,4 +5,4 @@ channels:
   - ericmjl
   - defaults
 
-always_yes: True
+always_yes: true
