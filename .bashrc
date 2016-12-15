@@ -123,7 +123,6 @@ case "$OSTYPE" in
     alias ls='ls -GFla'
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-    bash scripts/install_wget.sh
     ;;
   linux*)   alias ls='ls -Fla --color' ;;
   bsd*)     echo "BSD" ;;

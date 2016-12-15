@@ -1,7 +1,10 @@
 # Check the platform
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
-  darwin*)  echo "OSX" ;; 
+  darwin*)  echo "OSX" ;;
+  cd scripts
+  bash install.sh
+  cd ..
   linux*)   echo "LINUX" ;;
   bsd*)     echo "BSD" ;;
   *)        echo "unknown: $OSTYPE" ;;
@@ -32,7 +35,7 @@ fi
 case "$OSTYPE" in
   darwin*)
     # Symlink Sublime Text as a command line app
-    # ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime" 
+    # ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime"
     # Symlink the sublime 3 preferences.
     # ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
@@ -43,7 +46,7 @@ case "$OSTYPE" in
     #     bash miniconda.sh -b -p $HOME/anaconda
     # else
     #     echo "anaconda installed. moving on."
-    # fi 
+    # fi
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles
@@ -64,4 +67,3 @@ ln -svf "$HOME/dotfiles/ssh-copy-id.sh" "$HOME/bin/ssh-copy-id"
 
 # Symlink SSH config
 ln -svf "$HOME/dotfiles/.ssh/config" "$HOME/.ssh/config"
-
