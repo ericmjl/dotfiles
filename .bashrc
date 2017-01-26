@@ -120,11 +120,11 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
   darwin*)
-    alias ls='ls -GFla'
+    alias ls='ls -GFlah'
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
     ;;
-  linux*)   alias ls='ls -Fla --color' ;;
+  linux*)   alias ls='ls -Flah --color' ;;
   bsd*)     echo "BSD" ;;
   *)        echo "unknown: $OSTYPE" ;;
 esac
