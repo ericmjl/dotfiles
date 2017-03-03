@@ -2,9 +2,6 @@
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
   darwin*)  echo "OSX" ;;
-  cd scripts
-  bash install.sh
-  cd ..
   linux*)   echo "LINUX" ;;
   bsd*)     echo "BSD" ;;
   *)        echo "unknown: $OSTYPE" ;;
