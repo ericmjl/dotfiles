@@ -2,8 +2,7 @@ anaconda_upload: true
 
 channels:
   - conda-forge
-  - ericmjl
   - defaults
-
+  - ericmjl
 always_yes: true
 auto_update_conda: true
