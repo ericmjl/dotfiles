@@ -58,6 +58,7 @@ case "$OSTYPE" in
         echo "anaconda not installed; installing now..."
         wget https://repo.continuum.io/archive/Anaconda3-4.3.1-MacOSX-x86_64.sh -O anaconda.sh
         bash anaconda.sh -b -p $HOME/anaconda
+        rm anaconda.sh
         echo "anaconda successfully installed. moving on..."
     else
         echo "anaconda already installed. moving on..."
@@ -66,10 +67,12 @@ case "$OSTYPE" in
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles
+echo "Symlinking .bash_profile and .bashrc"
 ln -svf "$HOME/dotfiles/.bash_profile" ~
 ln -svf "$HOME/dotfiles/.bashrc" ~
 
 # Symlink condarc
+echo "Symlinking .condarc"
 ln -svf "$HOME/dotfiles/.condarc" ~
 
 # Symlink gitconfig
