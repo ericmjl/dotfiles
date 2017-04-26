@@ -38,7 +38,8 @@ case "$OSTYPE" in
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
-    if [ command -v brew >/dev/null 2>&1  ]; then
+    which -s brew
+    if [[ $? != 0 ]]; then
       echo "Homebrew is not installed; instaling now..."
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
