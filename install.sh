@@ -38,8 +38,12 @@ case "$OSTYPE" in
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
-    if [ hash brew >/dev/null ]; then
-      echo "Homebrew is installed. moving on."
+    if [ command -v brew >/dev/null 2>&1  ]; then
+      echo "Homebrew is not installed; instaling now..."
+      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    else
+      echo "Homebrew installed. moving on."
     fi
 
     # Check to see if Anaconda is installed.
