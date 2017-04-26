@@ -44,8 +44,9 @@ case "$OSTYPE" in
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew install imagemagick
       brew install wget
+      echo "Homebrew successfully installed. moving on..."
     else
-      echo "Homebrew installed. moving on."
+      echo "Homebrew installed. moving on..."
     fi
 
     # Check to see if Anaconda is installed.
@@ -53,10 +54,11 @@ case "$OSTYPE" in
     which -s conda
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
-        wget https://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O anaconda.sh
-        bash miniconda.sh -b -p $HOME/anaconda
+        wget https://repo.continuum.io/archive/Anaconda3-4.3.1-MacOSX-x86_64.sh -O anaconda.sh
+        bash anaconda.sh -b -p $HOME/anaconda
+        echo "anaconda successfully installed. moving on..."
     else
-        echo "anaconda installed. moving on."
+        echo "anaconda already installed. moving on..."
     fi
 
 esac
