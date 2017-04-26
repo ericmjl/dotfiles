@@ -7,7 +7,7 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-# Make a "/bin" directory under HOME
+# Make a "/bin" directory under HOME, for storing my own custom binaries.
 if [ ! -d "$HOME/bin" ]; then
     mkdir $HOME/bin
 fi
