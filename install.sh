@@ -44,6 +44,8 @@ case "$OSTYPE" in
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew install imagemagick
       brew install wget
+      brew install mosh
+      brew install tmux
       echo "Homebrew successfully installed. moving on..."
     else
       echo "Homebrew installed. moving on..."
