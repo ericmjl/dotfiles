@@ -129,4 +129,5 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
+# Make `..` an alias for `cd ..`
 alias ..='cd ..'

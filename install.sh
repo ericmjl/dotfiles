@@ -28,22 +28,30 @@ if [ ! -d "$HOME/github" ]; then
     mkdir $HOME/github
 fi
 
-# If OS is Mac OS X, then symlink Sublime Text
+# If OS is Mac OS X, then do the following:
 case "$OSTYPE" in
   darwin*)
-    # Symlink Sublime Text as a command line app
+    # # Symlink Sublime Text as a command line app
     # ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime"
     # Symlink the sublime 3 preferences.
     # ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
-    # echo "checking to see if anaconda is installed."
-    # if [ ! -d "$HOME/anaconda" ]; then
-    #     echo "anaconda not installed; installing now..."
-    #     wget https://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O anaconda.sh
-    #     bash miniconda.sh -b -p $HOME/anaconda
-    # else
-    #     echo "anaconda installed. moving on."
-    # fi
+    # Check to see if Homebrew is installed.
+    echo "checking to see if Homebrew is installed."
+    if [ hash brew >/dev/null ]; then
+      echo "Homebrew is installed. moving on."
+    fi
+
+    # Check to see if Anaconda is installed.
+    echo "checking to see if anaconda is installed."
+    if [ ! -d "$HOME/anaconda" ]; then
+        echo "anaconda not installed; installing now..."
+        wget https://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O anaconda.sh
+        bash miniconda.sh -b -p $HOME/anaconda
+    else
+        echo "anaconda installed. moving on."
+    fi
+
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles
