@@ -42,14 +42,16 @@ case "$OSTYPE" in
     if [[ $? != 0 ]]; then
       echo "Homebrew is not installed; instaling now..."
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+      brew install imagemagick
+      brew install wget
     else
       echo "Homebrew installed. moving on."
     fi
 
     # Check to see if Anaconda is installed.
     echo "checking to see if anaconda is installed."
-    if [ ! -d "$HOME/anaconda" ]; then
+    which -s conda
+    if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
         wget https://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O anaconda.sh
         bash miniconda.sh -b -p $HOME/anaconda
