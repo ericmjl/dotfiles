@@ -12,14 +12,16 @@
 #
 
 function conda_auto_env() {
-  if [ -e "update_env.sh" ]; then
-      bash update_env.sh
-  fi
   if [ -e "environment.yml" ]; then
     # echo "environment.yml file found"
     ENV=$(head -n 1 environment.yml | cut -f2 -d ' ')
     # Check if you are already in the environment
     if [[ $PATH != *$ENV* ]]; then
+        # Auto update the environment spec (by @ericmjl)
+        if [ -e "update_env.sh" ]; then
+            bash update_env.sh
+        fi
+
       # Check if the environment exists
       source activate $ENV
       if [ $? -eq 0 ]; then
