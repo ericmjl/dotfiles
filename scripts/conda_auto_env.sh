@@ -17,11 +17,6 @@ function conda_auto_env() {
     ENV=$(head -n 1 environment.yml | cut -f2 -d ' ')
     # Check if you are already in the environment
     if [[ $PATH != *$ENV* ]]; then
-        # Auto update the environment spec (by @ericmjl)
-        if [ -e "update_env.sh" ]; then
-            bash update_env.sh
-        fi
-
       # Check if the environment exists
       source activate $ENV
       if [ $? -eq 0 ]; then
@@ -33,9 +28,6 @@ function conda_auto_env() {
         source activate $ENV
       fi
     fi
-  # Auto deactivate environment outside of project (by @ericmjl)
-  else
-    source deactivate
   fi
 }
 
