@@ -33,6 +33,9 @@ function conda_auto_env() {
         source activate $ENV
       fi
     fi
+  # Auto deactivate environment outside of project (by @ericmjl)
+  else
+    source deactivate
   fi
 }
 
