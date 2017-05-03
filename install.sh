@@ -66,6 +66,9 @@ case "$OSTYPE" in
 
 esac
 
+# Install conda-auto-env
+source ./scripts/conda_auto_env.sh
+
 # Symlink bash_profile and bashrc to point to dotfiles
 echo "Symlinking .bash_profile and .bashrc"
 ln -svf "$HOME/dotfiles/.bash_profile" ~
