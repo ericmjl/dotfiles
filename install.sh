@@ -7,7 +7,7 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-# Make a "/bin" directory under HOME
+# Make a "/bin" directory under HOME, for storing my own custom binaries.
 if [ ! -d "$HOME/bin" ]; then
     mkdir $HOME/bin
 fi
@@ -38,31 +38,41 @@ case "$OSTYPE" in
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
-    if [ command -v brew >/dev/null 2>&1  ]; then
+    which -s brew
+    if [[ $? != 0 ]]; then
       echo "Homebrew is not installed; instaling now..."
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+      brew install imagemagick
+      brew install wget
+      brew install mosh
+      brew install tmux
+      echo "Homebrew successfully installed. moving on..."
     else
-      echo "Homebrew installed. moving on."
+      echo "Homebrew installed. moving on..."
     fi
 
     # Check to see if Anaconda is installed.
     echo "checking to see if anaconda is installed."
-    if [ ! -d "$HOME/anaconda" ]; then
+    which -s conda
+    if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
-        wget https://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O anaconda.sh
-        bash miniconda.sh -b -p $HOME/anaconda
+        wget https://repo.continuum.io/archive/Anaconda3-4.3.1-MacOSX-x86_64.sh -O anaconda.sh
+        bash anaconda.sh -b -p $HOME/anaconda
+        rm anaconda.sh
+        echo "anaconda successfully installed. moving on..."
     else
-        echo "anaconda installed. moving on."
+        echo "anaconda already installed. moving on..."
     fi
 
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles
+echo "Symlinking .bash_profile and .bashrc"
 ln -svf "$HOME/dotfiles/.bash_profile" ~
 ln -svf "$HOME/dotfiles/.bashrc" ~
 
 # Symlink condarc
+echo "Symlinking .condarc"
 ln -svf "$HOME/dotfiles/.condarc" ~
 
 # Symlink gitconfig
