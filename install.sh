@@ -39,7 +39,7 @@ case "$OSTYPE" in
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
     which -s brew
-    if [[ $? != 0 ]]; then
+    if [[ $? != 0 ]]; then  # check if exit code is not zero --> brew not installed.
       echo "Homebrew is not installed; instaling now..."
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew install imagemagick
@@ -56,9 +56,20 @@ case "$OSTYPE" in
     which -s conda
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
-        wget https://repo.continuum.io/archive/Anaconda3-4.3.1-MacOSX-x86_64.sh -O anaconda.sh
+        wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O anaconda.sh
         bash anaconda.sh -b -p $HOME/anaconda
         rm anaconda.sh
+        export PATH=$HOME/anaconda:$PATH
+        # Install basic data science stack into default environment
+        conda install pandas scipy numpy matplotlib seaborn jupyter ipykernel
+        # Enable environment kernels,
+        pip install environment_kernels
+        jupyter notebook --generate-config
+        echo ""
+        echo "#  Enabling Jupyter environment kernels plugin" >> $HOME/.jupyter/jupyter_notebook_config.py
+        echo "c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'" >> $HOME/.jupyter/jupyter_notebook_config.py
+
+        # We are done at this point, move on.
         echo "anaconda successfully installed. moving on..."
     else
         echo "anaconda already installed. moving on..."
