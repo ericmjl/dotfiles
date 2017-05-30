@@ -7,7 +7,7 @@ if [[ "$HOSTNAME" == rous ]]; then
 fi
 
 # Enable conda_auto_env
-source $HOME/dotfiles/scripts/conda_auto_env.sh
+# source $HOME/dotfiles/scripts/conda_auto_env.sh
 
 # Link to LuaJIT
 export PATH="$HOME/luajit/bin:$PATH"
