@@ -31,6 +31,13 @@ export PATH="$PATH:/Library/Tex"
 export PATH="$PATH:$HOME/pypy/bin"
 export PATH="$PATH:$HOME/pypy3/bin"
 
+# added by Eric to access CUDA
+export PATH=/usr/local/cuda-8.0/bin$PATH
+
+
+
+
+
 # Customizes the bash shell colours
 bold='';
 reset="\e[0m";
