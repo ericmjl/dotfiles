@@ -130,11 +130,15 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
   darwin*)
+    echo "OS X"
     alias ls='ls -GFlah'
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
     ;;
-  linux*)   alias ls='ls -Flah --color' ;;
+  linux*)
+    echo "LINUX"
+    alias ls='ls -Flah --color'
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64 ;;
   bsd*)     echo "BSD" ;;
   *)        echo "unknown: $OSTYPE" ;;
 esac
