@@ -46,7 +46,7 @@ case "$OSTYPE" in
       brew install wget
       brew install mosh
       brew install tmux
-      echo "Homebrew successfully installed. moving on..."
+      echo "Homebrew and favorites successfully installed, moving on..."
     else
       echo "Homebrew installed. moving on..."
     fi
