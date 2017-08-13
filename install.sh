@@ -97,3 +97,6 @@ ln -svf "$HOME/dotfiles/ssh-copy-id.sh" "$HOME/bin/ssh-copy-id"
 
 # Symlink SSH config
 ln -svf "$HOME/dotfiles/.ssh/config" "$HOME/.ssh/config"
+
+# Symlink .nanorc
+ln -svf "$HOME/dotfiles/.nanorc" "$HOME/.nanorc"
