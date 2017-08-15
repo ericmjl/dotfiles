@@ -35,6 +35,8 @@ case "$OSTYPE" in
     # ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime"
     # Symlink the sublime 3 preferences.
     # ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+    # Symlink nano preferences
+    ln -svf "$HOME/dotfiles/.nanorc" "$HOME/.nanorc"
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
@@ -99,4 +101,3 @@ ln -svf "$HOME/dotfiles/ssh-copy-id.sh" "$HOME/bin/ssh-copy-id"
 ln -svf "$HOME/dotfiles/.ssh/config" "$HOME/.ssh/config"
 
 # Symlink .nanorc
-ln -svf "$HOME/dotfiles/.nanorc" "$HOME/.nanorc"
