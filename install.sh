@@ -28,6 +28,18 @@ if [ ! -d "$HOME/github" ]; then
     mkdir $HOME/github
 fi
 
+echo -e "\nInstalling packages from regular brew"
+BREW_PACKAGES=(
+    "bash" # might as well get an updated terminal shell
+    "git" # version control https://git-scm.com/
+    "bash-completion" # bash completion for git and other things  https://github.com/scop/bash-completion
+    "gcc" # gnu compiler collection https://gcc.gnu.org/
+    "tmux" # window management https://tmux.github.io/
+    "wget" # curl alternative https://www.gnu.org/software/wget/
+    "imagemagick" # image processing library
+    "mosh" # mobile shell!
+)
+
 # If OS is Mac OS X, then do the following:
 case "$OSTYPE" in
   darwin*)
@@ -44,14 +56,19 @@ case "$OSTYPE" in
     if [[ $? != 0 ]]; then  # check if exit code is not zero --> brew not installed.
       echo "Homebrew is not installed; instaling now..."
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-      brew install imagemagick
-      brew install wget
-      brew install mosh
-      brew install tmux
-      echo "Homebrew and favorites successfully installed, moving on..."
     else
       echo "Homebrew installed. moving on..."
     fi
+    for pkg in "${BREW_PACKAGES[@]}"; do
+      if ! brew list -1 | grep -q "^${pkg}\$";
+      then
+        echo "Installing $pkg"
+        brew install "$pkg"
+      else
+        echo "$pkg already installed"
+      fi
+    done
+    echo "Homebrew and favorites successfully installed, moving on..."
 
     # Check to see if Anaconda is installed.
     echo "checking to see if anaconda is installed."
