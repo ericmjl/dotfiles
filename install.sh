@@ -89,9 +89,11 @@ echo "Symlinking .condarc"
 ln -svf "$HOME/dotfiles/.condarc" ~
 
 # Symlink gitconfig
+echo "Symlinking .gitconfig"
 ln -svf "$HOME/dotfiles/.gitconfig" ~
 
 # Symlink script for updating all git repositories
+echo "Symlinking script to pull all git repositories"
 ln -svf "$HOME/dotfiles/scripts/pull_git_repos.sh" "$github"
 
 # Symlink ssh-copy-id
@@ -100,4 +102,5 @@ ln -svf "$HOME/dotfiles/ssh-copy-id.sh" "$HOME/bin/ssh-copy-id"
 # Symlink SSH config
 ln -svf "$HOME/dotfiles/.ssh/config" "$HOME/.ssh/config"
 
-# Symlink .nanorc
+# Symlink tmux config
+ln -svf "$HOME/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
