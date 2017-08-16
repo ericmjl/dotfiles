@@ -59,6 +59,8 @@ case "$OSTYPE" in
     else
       echo "Homebrew installed. moving on..."
     fi
+
+    # Install homebrew packages that might not already be installed.
     for pkg in "${BREW_PACKAGES[@]}"; do
       if ! brew list -1 | grep -q "^${pkg}\$";
       then
