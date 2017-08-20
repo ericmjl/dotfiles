@@ -37,7 +37,7 @@ BREW_PACKAGES=(
     "tmux" # window management https://tmux.github.io/
     "wget" # curl alternative https://www.gnu.org/software/wget/
     "imagemagick" # image processing library
-    "mosh" # mobile shell!
+    "mobile-shell" # mobile shell!
 )
 
 # If OS is Mac OS X, then do the following:
