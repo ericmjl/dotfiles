@@ -43,17 +43,13 @@ BREW_PACKAGES=(
 # If OS is Mac OS X, then do the following:
 case "$OSTYPE" in
   darwin*)
-    # # Symlink Sublime Text as a command line app
-    # ln -svf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin/sublime"
-    # Symlink the sublime 3 preferences.
-    # ln -svf "$HOME/dotfiles/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
     # Symlink nano preferences
-    ln -svf "$HOME/dotfiles/.nanorc" "$HOME/.nanorc"
+    ln -svf "$HOME/dotfiles/.nanorc-mac" "$HOME/.nanorc"
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
     which -s brew
-    if [[ $? != 0 ]]; then  # check if exit code is not zero --> brew not installed.
+    if [[ $? != 0 ]]; then # check if exit code is not zero --> brew not installed.
       echo "Homebrew is not installed; instaling now..."
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
@@ -94,8 +90,9 @@ case "$OSTYPE" in
         echo "anaconda successfully installed. moving on..."
     else
         echo "anaconda already installed. moving on..."
-    fi
-
+    fi ;;
+  linux*)
+    ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc ;;
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles
