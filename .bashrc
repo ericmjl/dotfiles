@@ -113,7 +113,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # OS-specific things.
 case "$OSTYPE" in
-  solaris*) echo "SOLARIS" ;;
+  solaris*) ;;
   darwin*)
     alias ls='ls -GFlah'
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -125,8 +125,8 @@ case "$OSTYPE" in
     export CPATH=/usr/local/cuda/include:$CPATH
     export LIBRARY_PATH=/usr/local/cuda/lib64:$LIBRARY_PATH
     ;;
-  bsd*)     echo "BSD" ;;
-  *)        echo "unknown: $OSTYPE" ;;
+  bsd*)     echo ;;
+  *)        echo ;;
 esac
 
 # Make `..` an alias for `cd ..`
