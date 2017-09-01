@@ -1,11 +1,3 @@
-# For Rous only
-if [[ "$HOSTNAME" == rous ]]; then
-    module load beast/1.8.0
-    module load clustalo
-    module load muscle
-    module load RAxML
-fi
-
 # Link to LuaJIT
 export PATH="$HOME/luajit/bin:$PATH"
 
@@ -123,13 +115,11 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
   darwin*)
-    echo "OS X"
     alias ls='ls -GFlah'
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
     ;;
   linux*)
-    echo "LINUX"
     alias ls='ls -Flah --color'
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
     export CPATH=/usr/local/cuda/include:$CPATH
