@@ -1,18 +1,12 @@
 # Link to LuaJIT
 export PATH="$HOME/luajit/bin:$PATH"
 
-# Add /opt/local/(bin, sbin) for MacPorts
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
 # Link to Anaconda Python and other binaries folders
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # added by Eric to shortcut to different directories
 export github="$HOME/github"
-export pin="$github/protein-interaction-network"
-export protconv="$github/protein-convolutional-nets"
-export graphfp="$github/graph-fingerprint"
 export dotfiles="$HOME/dotfiles"
 export anaconda="$HOME/anaconda"
 
@@ -23,8 +17,11 @@ export PATH="$PATH:/Library/Tex"
 export PATH="$PATH:$HOME/pypy/bin"
 export PATH="$PATH:$HOME/pypy3/bin"
 
+# added by Eric to access git and nano
+export PATH="/usr/local/bin:$PATH"
+
 # added by Eric to access CUDA
-export PATH=/usr/local/cuda-8.0/bin$PATH
+export PATH=/usr/local/cuda-8.0/bin:$PATH
 
 # Customizes the bash shell colours
 bold='';
