@@ -47,7 +47,7 @@ function install_anaconda {
     export PATH=$HOME/anaconda/bin:$PATH
 
     # Install basic data science stack into default environment
-    conda install pandas scipy numpy matplotlib seaborn jupyter ipykernel
+    conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel
 
     # Enable environment kernels,
     pip install environment_kernels
@@ -106,19 +106,7 @@ case "$OSTYPE" in
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
        wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O anaconda.sh
-       bash anaconda.sh -b -p $HOME/anaconda
-       rm anaconda.sh
-       export PATH=$HOME/anaconda/bin:$PATH
-       # Install basic data science stack into default environment
-       conda install pandas scipy numpy matplotlib seaborn jupyter ipykernel
-       # Enable environment kernels.
-       pip install environment_kernels
-       jupyter notebook --generate-config
-       echo ""
-       echo "# Enabling Jupyter environment kernels plugin" >> $HOME/.jupyter/jupyter_notebook_config.py
-       echo "c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'" >> $HOME/.jupyter/jupyter_notebook_config.py
-
-       echo "anaconda successfully installed. Moving on..."
+       install_anaconda
     else
        echo "anaconda already installed. moving on..."
     fi ;;
