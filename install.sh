@@ -40,6 +40,27 @@ BREW_PACKAGES=(
     "mobile-shell" # mobile shell!
 )
 
+
+function install_anaconda {
+    bash anaconda.sh -b -p $HOME/anaconda
+    rm anaconda.sh
+    export PATH=$HOME/anaconda/bin:$PATH
+
+    # Install basic data science stack into default environment
+    conda install pandas scipy numpy matplotlib seaborn jupyter ipykernel
+
+    # Enable environment kernels,
+    pip install environment_kernels
+    jupyter notebook --generate-config
+    echo ""
+    echo "#  Enabling Jupyter environment kernels plugin" >> $HOME/.jupyter/jupyter_notebook_config.py
+    echo "c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'" >> $HOME/.jupyter/jupyter_notebook_config.py
+
+    # We are done at this point, move on.
+    echo "anaconda successfully installed. moving on..."
+}
+
+
 # If OS is Mac OS X, then do the following:
 case "$OSTYPE" in
   darwin*)
@@ -74,25 +95,33 @@ case "$OSTYPE" in
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
         wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O anaconda.sh
-        bash anaconda.sh -b -p $HOME/anaconda
-        rm anaconda.sh
-        export PATH=$HOME/anaconda:$PATH
-        # Install basic data science stack into default environment
-        conda install pandas scipy numpy matplotlib seaborn jupyter ipykernel
-        # Enable environment kernels,
-        pip install environment_kernels
-        jupyter notebook --generate-config
-        echo ""
-        echo "#  Enabling Jupyter environment kernels plugin" >> $HOME/.jupyter/jupyter_notebook_config.py
-        echo "c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'" >> $HOME/.jupyter/jupyter_notebook_config.py
-
-        # We are done at this point, move on.
-        echo "anaconda successfully installed. moving on..."
+        install_anaconda																																																																																										
     else
         echo "anaconda already installed. moving on..."
     fi ;;
+
   linux*)
-    ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc ;;
+    ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc
+    which conda
+    if [[ $? != 0 ]]; then
+        echo "anaconda not installed; installing now..."
+       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O anaconda.sh
+       bash anaconda.sh -b -p $HOME/anaconda
+       rm anaconda.sh
+       export PATH=$HOME/anaconda/bin:$PATH
+       # Install basic data science stack into default environment
+       conda install pandas scipy numpy matplotlib seaborn jupyter ipykernel
+       # Enable environment kernels.
+       pip install environment_kernels
+       jupyter notebook --generate-config
+       echo ""
+       echo "# Enabling Jupyter environment kernels plugin" >> $HOME/.jupyter/jupyter_notebook_config.py
+       echo "c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'" >> $HOME/.jupyter/jupyter_notebook_config.py
+
+       echo "anaconda successfully installed. Moving on..."
+    else
+       echo "anaconda already installed. moving on..."
+    fi ;;
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles

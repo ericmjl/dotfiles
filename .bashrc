@@ -109,7 +109,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Place conda-auto-env under github directory
-# source $github/software/conda-auto-env/conda_auto_env.sh
+source $HOME/dotfiles/conda_auto_env.sh
 
 # OS-specific things.
 case "$OSTYPE" in
