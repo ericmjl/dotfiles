@@ -1,4 +1,3 @@
-include ./conf.nanorc
 include /usr/local/share/nano/asm.nanorc
 include /usr/local/share/nano/awk.nanorc
 include /usr/local/share/nano/c.nanorc
@@ -27,4 +26,4 @@ include /usr/local/share/nano/sh.nanorc
 include /usr/local/share/nano/tcl.nanorc
 include /usr/local/share/nano/tex.nanorc
 include /usr/local/share/nano/xml.nanorc
-
+include /usr/local/share/nano/conf.nanorc
