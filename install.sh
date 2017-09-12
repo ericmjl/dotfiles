@@ -38,6 +38,7 @@ BREW_PACKAGES=(
     "wget" # curl alternative https://www.gnu.org/software/wget/
     "imagemagick" # image processing library
     "mobile-shell" # mobile shell!
+    "nano" # let's get an enhanced nano!
 )
 
 
