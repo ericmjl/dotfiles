@@ -132,3 +132,6 @@ alias ..='cd ..'
 # Proxy addresses used for work.
 source $HOME/.http_proxies
 
+# Alias for nano to ensure that soft wrapping always works
+# See: https://unix.stackexchange.com/a/364169
+alias nano='nano -\$wS'
