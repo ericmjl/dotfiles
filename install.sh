@@ -106,6 +106,7 @@ case "$OSTYPE" in
 
   linux*)
     ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc
+    cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/local/share/nano/.
     which conda
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
