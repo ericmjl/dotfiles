@@ -66,6 +66,8 @@ case "$OSTYPE" in
   darwin*)
     # Symlink nano preferences
     ln -svf "$HOME/dotfiles/.nanorc-mac" "$HOME/.nanorc"
+    cp $HOME/dotfiles/nano-syntax-highlighting/conf.nanorc /usr/local/share/nano/conf.nanorc
+    cp $HOME/dotfiles/nano-syntax-highlighting/etc-stuff.nanorc /usr/local/share/nano/etc-stuff.nanorc
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
