@@ -41,6 +41,7 @@ BREW_PACKAGES=(
 )
 
 
+# Installs anaconda according to my customizations
 function install_anaconda {
     bash anaconda.sh -b -p $HOME/anaconda
     rm anaconda.sh
@@ -86,7 +87,8 @@ case "$OSTYPE" in
         echo "Installing $pkg"
         brew install "$pkg"
       else
-        echo "$pkg already installed"
+        echo "$pkg already installed; attempting upgrade"
+        brew upgrade "$pkg"
       fi
     done
     echo "Homebrew and favorites successfully installed, moving on..."
