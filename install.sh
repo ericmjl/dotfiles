@@ -68,8 +68,7 @@ case "$OSTYPE" in
   darwin*)
     # Symlink nano preferences
     ln -svf "$HOME/dotfiles/.nanorc-mac" "$HOME/.nanorc"
-    cp $HOME/dotfiles/nano-syntax-highlighting/conf.nanorc /usr/local/share/nano/conf.nanorc
-    cp $HOME/dotfiles/nano-syntax-highlighting/etc-stuff.nanorc /usr/local/share/nano/etc-stuff.nanorc
+    cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/local/share/nano/.
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
@@ -100,13 +99,14 @@ case "$OSTYPE" in
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
         wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O anaconda.sh
-        install_anaconda																																																																																										
+        install_anaconda
     else
         echo "anaconda already installed. moving on..."
     fi ;;
 
   linux*)
     ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc
+    cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/local/share/nano/.
     which conda
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
