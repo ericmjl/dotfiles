@@ -28,3 +28,4 @@ include /usr/local/share/nano/tex.nanorc
 include /usr/local/share/nano/xml.nanorc
 include /usr/local/share/nano/conf.nanorc
 include /usr/local/share/nano/md.nanorc
+include /usr/local/share/nano/yaml.nanorc
