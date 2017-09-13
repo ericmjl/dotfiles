@@ -42,3 +42,7 @@
     changed = blue
     untracked = magenta
     deleted = red
+# [https]
+# 	proxy = http://usca-proxy01.na.novartis.net:2011
+[include]
+	path = ~/.gitproxy
