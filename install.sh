@@ -28,7 +28,6 @@ if [ ! -d "$HOME/github" ]; then
     mkdir $HOME/github
 fi
 
-echo -e "\nInstalling packages from regular brew"
 BREW_PACKAGES=(
     "bash" # might as well get an updated terminal shell
     "git" # version control https://git-scm.com/
@@ -81,6 +80,7 @@ case "$OSTYPE" in
     fi
 
     # Install homebrew packages that might not already be installed.
+    echo -e "\nInstalling packages from regular brew"
     for pkg in "${BREW_PACKAGES[@]}"; do
       if ! brew list -1 | grep -q "^${pkg}\$";
       then
@@ -106,7 +106,8 @@ case "$OSTYPE" in
 
   linux*)
     ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc
-    cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/local/share/nano/.
+    echo "Copying nanorcs"
+    sudo cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/share/nano/.
     which conda
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."

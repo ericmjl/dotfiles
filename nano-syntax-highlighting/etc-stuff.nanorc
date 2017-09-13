@@ -1,6 +1,6 @@
-#syntax "etcconf.d" "conf.d/(\.|/)"
-#color magenta "\".*$"
-#color blue "#.*$"
+syntax "etcconf.d" "conf.d/(\.|/)"
+color magenta "\".*$"
+color blue "#.*$"
 
 syntax "group" "group$"
 color green "[0-9]\:.*$"
@@ -21,7 +21,7 @@ color magenta "[a-zA-Z0-9\_]+="
 color green "#.*$"
 
 syntax "hosts" "hosts$"
-#color brightwhite "[0-9]"
+color brightwhite "[0-9]"
 color yellow "^[[:space:]]*[.0-9A-Z_]*.*$"
 color brightblue "^[[:space:]]*[.0-9A-Z_]*"
 color red "127.0.0.1"
@@ -136,8 +136,7 @@ color green "#.*$"
 syntax "squidconf" "squid.conf$"
 color brightyellow "(http_port|hierarchy_stoplist|maximum_object_size|cache_dir|dns_testnames)"
 color brightyellow "(coredump_dir|pipeline_prefetch|cache_mgr|visible_hostname|ftp_user|client_netmask)"
-color cyan 
-"(acl|refresh_pattern|quick_abort_(min|max)|(cache|memory)_replacement_policy|(access|cache|cache_store)_log|cache_host)"
+# color cyan "(acl|refresh_pattern|quick_abort_(min|max)|(cache|memory)_replacement_policy|(access|cache|cache_store)_log|cache_host)"
 color yellow "((http|icp|snmp)_access|snmp_port|parent|sibling|anonymize_headers|fake_user_agent)"
 color brightgreen "(allow|transparent|[[:space:]]on)"
 color brightred "(deny|reload\-into\-ims|override\-expire|override\-lastmod|[[:space:]]off)"
@@ -174,8 +173,7 @@ color green "#.*$"
 syntax "dhcpconf" "dhcpd.conf$"
 icolor brightgreen "^[[:space:]]*[.A-Z]*[[:space:]]*[.A-Z]*|ad\-hoc|interim"
 color cyan "(authoritative|ddns\-update\-style|subnet|host|log\-facility)"
-color brightblue 
-"(netmask|routers|option|(netbios|domain)-nam(e|e-servers)|(default|max)-lease-time)|range|broadcast\-address|subnet-mask"
+color brightblue "(netmask|routers|option|(netbios|domain)-nam(e|e-servers)|(default|max)-lease-time)|range|broadcast\-address|subnet-mask"
 color brightyellow  start="\"" end="\""
 color yellow  "(hardware|ethernet|fixed\-address)"
 color brightblack "\:|\;|\{|\})""
@@ -213,23 +211,15 @@ color green "#.*$"
 
 syntax "udevrules" "\.rules$"
 color brightwhite "[0-9]"
-color brightblack 
-"(ACTION|SUBSYSTEM|DEVPATH|OPTIONS|WAIT_FOR_SYSFS|ENV|KERNEL|NAME|MODE|GROUP|SYMLINK|DRIVERS|PROGRAM|RUN)"
+color brightblack "(ACTION|SUBSYSTEM|DEVPATH|OPTIONS|WAIT_FOR_SYSFS|ENV|KERNEL|NAME|MODE|GROUP|SYMLINK|DRIVERS|PROGRAM|RUN)"
 color brightblack "(GOTO|IMPORT|ATTRS|SUBSYSTEMS|DVB|IR|BUS|SYSFS|ATTR|LABEL)"
-color yellow 
-"(add|net|scsi|drivers|module|address|bus|devices|ioerr_cnt|ignore_device|svga|video|tt(y(S|USB)|y|s)|last_rule)"
-color yellow 
-"(pnp|(au|ra)dio|tape|disk|snd|microcode|f(b|d|loppy|irmware)|usb|lp|kbd|parport|block|ide|misc|netlink|input)"
-color yellow 
-"(mouse|event|joystick|psmouse|atkbd|spkr|pcspkr|ir|dvb|persistent|storage|end|scanner|sound|dialout|console)"
-color yellow 
-"(cdrom|cdrw|dvd|dvdrw|isdn|pty|vcs|vcsa|ippp|dcbri|ircomm|capi|card|nvidia|rtc|agpgart|psaux|ptmx|sd|dasd)"
-color yellow 
-"(ataraid|cciss|ida|rd|3dfx|control|hw|pcm|midi|timer|seq|cpu|msr|dm|i2c|mice|js|ts|loop|md|uinput|inotify|aoe)"
-color brightyellow 
-"(ID_(SERIAL|PATH|CLASS|EDD|CDROM|CDROM_(DVD|DVD_R|CD_RW))|program|parent|removable|GENERATED|COMMENT)"
-color brightyellow 
-"(id(Vendor|Product)|PHYSDEVBUS|(UDEV|UDEVD)_EVENT|INTERFACE_NEW|MODALIAS|modalias|alias|name)"
+color yellow "(add|net|scsi|drivers|module|address|bus|devices|ioerr_cnt|ignore_device|svga|video|tt(y(S|USB)|y|s)|last_rule)"
+color yellow "(pnp|(au|ra)dio|tape|disk|snd|microcode|f(b|d|loppy|irmware)|usb|lp|kbd|parport|block|ide|misc|netlink|input)"
+color yellow "(mouse|event|joystick|psmouse|atkbd|spkr|pcspkr|ir|dvb|persistent|storage|end|scanner|sound|dialout|console)"
+color yellow "(cdrom|cdrw|dvd|dvdrw|isdn|pty|vcs|vcsa|ippp|dcbri|ircomm|capi|card|nvidia|rtc|agpgart|psaux|ptmx|sd|dasd)"
+color yellow "(ataraid|cciss|ida|rd|3dfx|control|hw|pcm|midi|timer|seq|cpu|msr|dm|i2c|mice|js|ts|loop|md|uinput|inotify|aoe)"
+color brightyellow "(ID_(SERIAL|PATH|CLASS|EDD|CDROM|CDROM_(DVD|DVD_R|CD_RW))|program|parent|removable|GENERATED|COMMENT)"
+color brightyellow "(id(Vendor|Product)|PHYSDEVBUS|(UDEV|UDEVD)_EVENT|INTERFACE_NEW|MODALIAS|modalias|alias|name)"
 color brightred "(\%(k|r|c|n))"
 color blue "(\;|\.|\"|\,)"
 color brightblue "(\=|\*|\?)"
