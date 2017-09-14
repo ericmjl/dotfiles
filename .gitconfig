@@ -1,48 +1,57 @@
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+    required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
+
 [user]
-	name = Eric Ma
-	email = ericmajinglong@gmail.com
+    name = Eric Ma
+    email = ericmajinglong@gmail.com
+
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
 [color]
-	ui = auto
+    ui = auto
+
 [alias]
-	branches = !legit branches
-	graft = !legit graft
-	harvest = !legit harvest
-	publish = !legit publish
-	unpublish = !legit unpublish
-	sprout = !legit sprout
-	sync = !legit sync
-	switch = !legit switch
-	resync = !legit resync
-	slog = log --oneline --topo-order --graph
+    branches = !legit branches
+    graft = !legit graft
+    harvest = !legit harvest
+    publish = !legit publish
+    unpublish = !legit unpublish
+    sprout = !legit sprout
+    sync = !legit sync
+    switch = !legit switch
+    resync = !legit resync
+    slog = log --oneline --topo-order --graph
+
 [core]
-	editor = pico
+    editor = pico
+
 [push]
-	default = simple
+    default = simple
+
 [color "branch"]
     current = yellow ul
     local = yellow
     remote = green
+
 [color "diff"]
-	meta = blue black bold
+    meta = cyan black bold
+
 [color "status"]
     added = green
-    changed = blue
+    changed = cyan
     untracked = magenta
     deleted = red
-# [https]
-# 	proxy = http://usca-proxy01.na.novartis.net:2011
+
 [include]
-	path = ~/.gitproxy
+    path = ~/.gitproxy
