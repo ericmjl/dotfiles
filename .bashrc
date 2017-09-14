@@ -23,6 +23,14 @@ export PATH="/usr/local/bin:$PATH"
 # added by Eric to access CUDA
 export PATH=/usr/local/cuda-8.0/bin:$PATH
 
+# Enable conda-auto-env
+source $HOME/dotfiles/conda_auto_env.sh
+
+# Proxy addresses used for work. Checks to see if .http_proxies is present before sourcing it.
+if [ -e $HOME/.http_proxies ]; then
+    source $HOME/.http_proxies;
+fi
+
 # Customizes the bash shell colours
 bold='';
 reset="\e[0m";
@@ -89,48 +97,52 @@ prompt_git() {
 }
 
 # Set the terminal title and prompt.
-# export PS1="$bold\[$red\][ \[$cyan\]\u \[$yellow\]at \[$green\]\h \[$yellow\]in \[$red\]\W \[$red\]]\[$green\] \$ \[$reset\]"
-PS1="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${bold}\]\n"; # newline
-PS1+="\[${cyan}\]\u"; # username
-PS1+="\[${yellow}\] at ";
-PS1+="\[${green}\]\h"; # host
-PS1+="\[${yellow}\] in ";
-PS1+="\[${red}\]\w"; # working directory full path
+PS1="\[\033]0;\W\007\]";  # working directory base name
+PS1+="\[${bold}\]\n";     # newline
+PS1+="\[${cyan}\]\u";     # username
+PS1+="\[${yellow}\] at "; # 'at'
+PS1+="\[${green}\]\h";    # host
+PS1+="\[${yellow}\] in "; # 'in'
+PS1+="\[${red}\]\w";      # working directory full path
 PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
-PS1+="\n";
+PS1+="\n";                # newline
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
 
+# Enable colors in the terminal when doing `ls`.
+# See: http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
-# Enable conda-auto-env
-source $HOME/dotfiles/conda_auto_env.sh
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # OS-specific things.
 case "$OSTYPE" in
-  solaris*) ;;
-  darwin*)
-    alias ls='ls -GFlah'
-    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-    ;;
-  linux*)
-    alias ls='ls -Flah --color'
-    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-    export CPATH=/usr/local/cuda/include:$CPATH
-    export LIBRARY_PATH=/usr/local/cuda/lib64:$LIBRARY_PATH
-    ;;
-  bsd*)     echo ;;
-  *)        echo ;;
+    solaris*) ;;
+    darwin*)
+        alias ls='ls -GFlah'
+        # Expand save panel by default
+        # See: https://gist.github.com/meleyal/5890865
+        defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+        defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+        # Expand print panel by default
+        defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+        defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+        ;;
+    linux*)
+
+        alias ls='ls -Flah --color'
+        # Set LD_LIBRARY_PATH, CPATH and LIBRARY_PATH for CUDA on Linux.
+        export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+        export CPATH=/usr/local/cuda/include:$CPATH
+        export LIBRARY_PATH=/usr/local/cuda/lib64:$LIBRARY_PATH
+        ;;
+    bsd*)     echo ;;
+    *)        echo ;;
 esac
 
 # Make `..` an alias for `cd ..`
 alias ..='cd ..'
-
-# Proxy addresses used for work.
-source $HOME/.http_proxies
 
 # Alias for nano to ensure that soft wrapping always works
 # See: https://unix.stackexchange.com/a/364169
