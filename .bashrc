@@ -104,7 +104,7 @@ PS1+="\[${yellow}\] at "; # 'at'
 PS1+="\[${green}\]\h";    # host
 PS1+="\[${yellow}\] in "; # 'in'
 PS1+="\[${red}\]\w";      # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
+PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${cyan}\]\")"; # Git repository details
 PS1+="\n";                # newline
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
