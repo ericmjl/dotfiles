@@ -30,3 +30,6 @@ include /usr/local/share/nano/conf.nanorc
 include /usr/local/share/nano/md.nanorc
 include /usr/local/share/nano/yaml.nanorc
 include /usr/local/share/nano/reST.nanorc
+
+set tabsize 4
+set tabstospaces
