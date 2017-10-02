@@ -34,7 +34,7 @@
     slog = log --oneline --topo-order --graph
 
 [core]
-    editor = pico
+    editor = nano
 
 [push]
     default = simple
@@ -55,3 +55,6 @@
 
 [include]
     path = ~/.gitproxy
+
+[credential]
+    helper = cache
