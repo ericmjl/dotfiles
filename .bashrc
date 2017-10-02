@@ -147,3 +147,19 @@ alias ..='cd ..'
 # Alias for nano to ensure that soft wrapping always works
 # See: https://unix.stackexchange.com/a/364169
 alias nano='nano -\$wS'
+
+if test -d /usr/prog/modules/all; then
+    module use /usr/prog/modules/all
+    module load proxy/GLOBAL
+fi
+if test -d /cm/shared/modulefiles; then
+    module use /cm/shared/modulefiles
+    module load uge
+fi
+if test -d /cm/local/modulefiles; then
+    module use /cm/local/modulefiles
+fi
+
+if test -d /usr/prog/isld/modules; then
+    module use /usr/prog/isld/modules
+fi
