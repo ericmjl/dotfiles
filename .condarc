@@ -8,10 +8,3 @@ channels:
 always_yes: true
 
 auto_update_conda: true
-
-create_default_packages:
-  - ipython
-  - jupyter
-  - ipykernel
-  - jupyterlab
-  - environment_kernels
