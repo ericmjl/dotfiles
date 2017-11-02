@@ -22,16 +22,17 @@
     ui = auto
 
 [alias]
-    branches = !legit branches
+	branches = !legit branches
     graft = !legit graft
     harvest = !legit harvest
-    publish = !legit publish
-    unpublish = !legit unpublish
+	publish = !legit publish
+	unpublish = !legit unpublish
     sprout = !legit sprout
-    sync = !legit sync
-    switch = !legit switch
-    resync = !legit resync
+	sync = !legit sync
+	switch = !legit switch
+	resync = !legit resync
     slog = log --oneline --topo-order --graph
+	undo = !legit undo
 
 [core]
     editor = nano

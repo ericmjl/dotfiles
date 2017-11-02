@@ -15,7 +15,11 @@ export PATH="$PATH:/Library/Tex"
 
 # added by Eric to access pypy
 export PATH="$PATH:$HOME/pypy/bin"
-export PATH="$PATH:$HOME/pypy3/bin"
+alias pip_pypy="$HOME/pypy/bin/pip"
+export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
+alias ppip="/usr/local/bin/pip_pypy3"
+alias pipython="/usr/local/share/pypy3/ipython3"
+
 
 # added by Eric to access git and nano
 export PATH="/usr/local/bin:$PATH"
