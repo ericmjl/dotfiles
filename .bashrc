@@ -1,5 +1,5 @@
 # Link to LuaJIT
-export PATH="$HOME/luajit/bin:$PATH"
+# export PATH="$HOME/luajit/bin:$PATH"
 
 # Link to Anaconda Python and other binaries folders
 export PATH="$HOME/anaconda/bin:$PATH"
