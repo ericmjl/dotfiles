@@ -11,7 +11,9 @@ auto_update_conda: true
 
 create_default_packages:
   - ipython
-  - jupyter
   - ipykernel
+  - jupyter
   - jupyterlab
-  - environment_kernels
+  - isort
+  - pycodestyle
+  - pytest
