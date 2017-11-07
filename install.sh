@@ -105,6 +105,7 @@ case "$OSTYPE" in
     fi ;;
 
   linux*)
+    git clone git@github.com:scopatz/nanorc.git ~/.nano
     ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc
     echo "Copying nanorcs"
     sudo cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/share/nano/.
