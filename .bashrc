@@ -167,3 +167,8 @@ fi
 if test -d /usr/prog/isld/modules; then
     module use /usr/prog/isld/modules
 fi
+
+# Source .rcode for remote visual studio code editing.
+if test -e .rcode; then 
+    source .rcode
+fi
