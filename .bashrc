@@ -152,6 +152,10 @@ alias ..='cd ..'
 # See: https://unix.stackexchange.com/a/364169
 alias nano='nano -\$wS'
 
+# Alias for ls
+# I am being so, so, lazy.
+alias l='ls'
+
 if test -d /usr/prog/modules/all; then
     module use /usr/prog/modules/all
     module load proxy/GLOBAL
