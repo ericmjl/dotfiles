@@ -66,8 +66,8 @@ function install_anaconda {
 case "$OSTYPE" in
   darwin*)
     # Symlink nano preferences
-    ln -svf "$HOME/dotfiles/.nanorc-mac" "$HOME/.nanorc"
-    cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/local/share/nano/.
+    ln -svf "$HOME/dotfiles/nano/.nanorc-mac" "$HOME/.nanorc"
+    cp $HOME/dotfiles/nano/nano-syntax-highlighting/*.nanorc /usr/local/share/nano/.
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
@@ -106,9 +106,9 @@ case "$OSTYPE" in
 
   linux*)
     git clone git@github.com:scopatz/nanorc.git ~/.nano
-    ln -svf $HOME/dotfiles/.nanorc-linux $HOME/.nanorc
+    ln -svf $HOME/dotfiles/nano/.nanorc-linux $HOME/.nanorc
     echo "Copying nanorcs"
-    sudo cp $HOME/dotfiles/nano-syntax-highlighting/*.nanorc /usr/share/nano/.
+    sudo cp $HOME/dotfiles/nano/nano-syntax-highlighting/*.nanorc /usr/share/nano/.
     which conda
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
