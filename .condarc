@@ -17,3 +17,5 @@ create_default_packages:
   - isort
   - pycodestyle
   - pytest
+  - autopep8
+  - jupyter_contrib_nbextensions
