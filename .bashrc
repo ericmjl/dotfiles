@@ -20,6 +20,9 @@ export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
 alias ppip="/usr/local/bin/pip_pypy3"
 alias pipython="/usr/local/share/pypy3/ipython3"
 alias jp="jupyter notebook"
+alias jl="jupyter lab"
+alias sa="source activate"
+alias sd="source deactivate"
 
 
 # added by Eric to access git and nano
