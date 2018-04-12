@@ -19,6 +19,10 @@ alias pip_pypy="$HOME/pypy/bin/pip"
 export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
 alias ppip="/usr/local/bin/pip_pypy3"
 alias pipython="/usr/local/share/pypy3/ipython3"
+alias jp="jupyter notebook"
+alias jl="jupyter lab"
+alias sa="source activate"
+alias sd="source deactivate"
 
 
 # added by Eric to access git and nano
@@ -173,6 +177,6 @@ if test -d /usr/prog/isld/modules; then
 fi
 
 # Source .rcode for remote visual studio code editing.
-if test -e .rcode; then 
+if test -e .rcode; then
     source .rcode
 fi
