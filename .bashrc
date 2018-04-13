@@ -183,5 +183,5 @@ fi
 
 alias fixcam="sudo killall VDCAssistant"
 
-. /home/maer3/anaconda/etc/profile.d/conda.sh
-conda activate
+# . /home/maer3/anaconda/etc/profile.d/conda.sh
+# conda activate
