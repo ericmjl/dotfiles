@@ -12,3 +12,5 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+. /Users/ericmjl/anaconda/etc/profile.d/conda.sh
+conda activate
