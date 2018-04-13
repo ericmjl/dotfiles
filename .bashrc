@@ -180,3 +180,6 @@ fi
 if test -e .rcode; then
     source .rcode
 fi
+
+
+alias fixcam="sudo killall VDCAssistant"
