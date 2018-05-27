@@ -50,15 +50,16 @@ function install_anaconda {
     # Install basic data science stack into default environment
     conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel
 
-    # Enable environment kernels,
-    pip install environment_kernels
     jupyter notebook --generate-config
-    echo ""
-    echo "#  Enabling Jupyter environment kernels plugin" >> $HOME/.jupyter/jupyter_notebook_config.py
-    echo "c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'" >> $HOME/.jupyter/jupyter_notebook_config.py
 
     # We are done at this point, move on.
     echo "anaconda successfully installed. moving on..."
+}
+
+# Install nanorc
+function install_nanorc {
+    git clone git@github.com:ericmjl/nanorc.git ~/.nano
+    cat ~/.nano/nanorc >> ~/.nanorc
 }
 
 
@@ -66,8 +67,7 @@ function install_anaconda {
 case "$OSTYPE" in
   darwin*)
     # Symlink nano preferences
-    ln -svf "$HOME/dotfiles/nano/.nanorc-mac" "$HOME/.nanorc"
-    cp $HOME/dotfiles/nano/nano-syntax-highlighting/*.nanorc /usr/local/share/nano/.
+    install_nanorc
 
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
@@ -105,10 +105,10 @@ case "$OSTYPE" in
     fi ;;
 
   linux*)
-    git clone git@github.com:scopatz/nanorc.git ~/.nano
-    ln -svf $HOME/dotfiles/nano/.nanorc-linux $HOME/.nanorc
-    echo "Copying nanorcs"
-    sudo cp $HOME/dotfiles/nano/nano-syntax-highlighting/*.nanorc /usr/share/nano/.
+    # Install nanorc
+    install_nanorc
+
+    # Install conda
     which conda
     if [[ $? != 0 ]]; then
         echo "anaconda not installed; installing now..."
