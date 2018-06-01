@@ -154,7 +154,8 @@ alias ..='cd ..'
 
 # Alias for nano to ensure that soft wrapping always works
 # See: https://unix.stackexchange.com/a/364169
-alias nano='nano -\$wS'
+# Commented out on 1 June 2018 for testing on RHEL.
+# alias nano='nano -\$wS'
 
 # Alias for ls
 # I am being so, so, lazy.
