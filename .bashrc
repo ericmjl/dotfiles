@@ -180,7 +180,11 @@ if test -e .rcode; then
     source .rcode
 fi
 
-alias fixcam="sudo killall VDCAssistant"
 
 # . /home/maer3/anaconda/etc/profile.d/conda.sh
 # conda activate
+
+# More aliases
+alias fixcam="sudo killall VDCAssistant"
+alias saa="source activate autograd_cupy_dev"
+
