@@ -4,8 +4,8 @@
     smudge = git media smudge %f
 
 [user]
-    name = Eric Ma
-    email = ericmajinglong@gmail.com
+	name = Eric Ma
+	email = ericmajinglong@gmail.com
 
 [filter "hawser"]
     clean = git hawser clean %f
@@ -72,3 +72,9 @@
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [mergetool]
 	prompt = false
+[https]
+[http]
+[https]
+	proxy = http://nibr-proxy.global.nibr.novartis.net:2011
+[http]
+	proxy = http://nibr-proxy.global.nibr.novartis.net:2011
