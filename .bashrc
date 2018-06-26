@@ -35,9 +35,7 @@ export PATH=/usr/local/cuda-8.0/bin:$PATH
 source $HOME/dotfiles/conda_auto_env.sh
 
 # Proxy addresses used for work. Checks to see if .http_proxies is present before sourcing it.
-if [ -e $HOME/.http_proxies ]; then
-    source $HOME/.http_proxies;
-fi
+source nibrproxy
 
 # Customizes the bash shell colours
 bold='';
