@@ -13,26 +13,26 @@
     required = true
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [color]
     ui = auto
 
 [alias]
-	branches = !legit branches
+    branches = !legit branches
     graft = !legit graft
     harvest = !legit harvest
-	publish = !legit publish
-	unpublish = !legit unpublish
+    publish = !legit publish
+    unpublish = !legit unpublish
     sprout = !legit sprout
-	sync = !legit sync
-	switch = !legit switch
-	resync = !legit resync
+    sync = !legit sync
+    switch = !legit switch
+    resync = !legit resync
     slog = log --oneline --topo-order --graph
-	undo = !legit undo
+    undo = !legit undo
 
 [core]
     editor = nano
@@ -57,18 +57,27 @@
 [include]
     path = ~/.gitproxy
 
-[credential]
-    helper = cache
+
 [diff "jupyternotebook"]
-	command = git-nbdiffdriver diff
+    command = git-nbdiffdriver diff
+
 [merge "jupyternotebook"]
-	driver = git-nbmergedriver merge %O %A %B %L %P
-	name = jupyter notebook merge driver
+    driver = git-nbmergedriver merge %O %A %B %L %P
+    name = jupyter notebook merge driver
+
 [difftool "nbdime"]
-	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\"
+    cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\"
+
 [difftool]
-	prompt = false
+    prompt = false
+
 [mergetool "nbdime"]
-	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+    cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
 [mergetool]
-	prompt = false
+    prompt = false
+
+# [https]
+#     proxy = http://nibr-proxy.global.nibr.novartis.net:2011
+# [http]
+#     proxy = http://nibr-proxy.global.nibr.novartis.net:2011
