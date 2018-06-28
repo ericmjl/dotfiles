@@ -189,4 +189,5 @@ fi
 # More aliases
 alias fixcam="sudo killall VDCAssistant"
 alias saa="source activate autograd_cupy_dev"
-
+alias rebash="source $HOME/.bashrc"
+alias bashedit="nano $HOME/.bashrc"
