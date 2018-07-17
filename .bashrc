@@ -187,4 +187,4 @@ fi
 # More aliases
 alias fixcam="sudo killall VDCAssistant"
 alias saa="source activate autograd_cupy_dev"
-
+alias sab="source activate bayesian-modelling-tutorial"
