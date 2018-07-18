@@ -190,10 +190,17 @@ fi
 
 # More aliases
 alias fixcam="sudo killall VDCAssistant"
+
+# Conda aliases
 alias saa="source activate autograd_cupy_dev"
 alias sa="source activate"
+alias sab="source activate bayesian-modelling-tutorial"
+
+# Bash aliases
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
+
+# Git Aliases
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
