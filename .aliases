@@ -1,0 +1,47 @@
+# Python
+alias pip_pypy="$HOME/pypy/bin/pip"
+alias ppip="/usr/local/bin/pip_pypy3"
+alias pipython="/usr/local/share/pypy3/ipython3"
+
+# Jupyter
+alias jp="jupyter notebook"
+alias jl="jupyter lab"
+
+# Conda
+alias sa="source activate"
+alias sd="source deactivate"
+alias saa="source activate autograd_cupy_dev"
+alias sab="source activate bayesian-modelling-tutorial"
+alias cel="conda env list"
+alias cl="conda list"
+alias ced="conda env remove -n"
+alias ce="conda env create -f environment.yml"
+
+# Shell
+alias ..='cd ..'
+alias l='ls'
+alias rebash="source $HOME/.bashrc"
+alias bashedit="nano $HOME/.bashrc"
+
+# Miscellaneous
+alias fixcam="sudo killall VDCAssistant"
+
+# Git Aliases
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gd="git diff"
+alias gm="git merge"
+alias gpl="git pull"
+alias gps="git push"
+alias gl="git log"
+alias gk="git checkout"
+alias gb="git branch"
+
+# tmux
+alias ta="tmux a -t"
+alias tn="tmux new -s"
+alias tl="tmux ls"
+
+# open Mac apps
+alias safari="open -a Safari"

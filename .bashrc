@@ -5,25 +5,12 @@
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-# added by Eric to shortcut to different directories
-export github="$HOME/github"
-export dotfiles="$HOME/dotfiles"
-export anaconda="$HOME/anaconda"
-
 # added by Eric to access Tex
 export PATH="$PATH:/Library/Tex"
 
 # added by Eric to access pypy
 export PATH="$PATH:$HOME/pypy/bin"
-alias pip_pypy="$HOME/pypy/bin/pip"
 export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
-alias ppip="/usr/local/bin/pip_pypy3"
-alias pipython="/usr/local/share/pypy3/ipython3"
-alias jp="jupyter notebook"
-alias jl="jupyter lab"
-alias sa="source activate"
-alias sd="source deactivate"
-
 
 # added by Eric to access git and nano
 export PATH="/usr/local/bin:$PATH"
@@ -151,17 +138,10 @@ case "$OSTYPE" in
     *)        echo ;;
 esac
 
-# Make `..` an alias for `cd ..`
-alias ..='cd ..'
-
 # Alias for nano to ensure that soft wrapping always works
 # See: https://unix.stackexchange.com/a/364169
 # Commented out on 1 June 2018 for testing on RHEL.
 # alias nano='nano -\$wS'
-
-# Alias for ls
-# I am being so, so, lazy.
-alias l='ls'
 
 if test -d /usr/prog/modules/all; then
     module use /usr/prog/modules/all
@@ -185,37 +165,11 @@ if test -e .rcode; then
 fi
 
 
-# . /home/maer3/anaconda/etc/profile.d/conda.sh
+# source /home/maer3/anaconda/etc/profile.d/conda.sh
 # conda activate
 
-# More aliases
-alias fixcam="sudo killall VDCAssistant"
+# Enable aliases in shell.
+source .aliases
 
-# Conda aliases
-alias saa="source activate autograd_cupy_dev"
-alias sa="source activate"
-alias sab="source activate bayesian-modelling-tutorial"
-
-# Bash aliases
-alias rebash="source $HOME/.bashrc"
-alias bashedit="nano $HOME/.bashrc"
-
-# Git Aliases
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit -m"
-alias gd="git diff"
-alias gm="git merge"
-alias gpl="git pull"
-alias gps="git push"
-alias gl="git log"
-alias gk="git checkout"
-alias gb="git branch"
-
-alias ta="tmux a -t"
-alias tn="tmux new -s"
-alias tl="tmux ls"
-
-alias cel="conda env list"
-alias cl="conda list"
-
+# Enable shortcuts
+source .shortcuts
