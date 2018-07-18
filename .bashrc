@@ -191,5 +191,24 @@ fi
 # More aliases
 alias fixcam="sudo killall VDCAssistant"
 alias saa="source activate autograd_cupy_dev"
+alias sa="source activate"
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gd="git diff"
+alias gm="git merge"
+alias gpl="git pull"
+alias gps="git push"
+alias gl="git log"
+alias gk="git checkout"
+alias gb="git branch"
+
+alias ta="tmux a -t"
+alias tn="tmux new -s"
+alias tl="tmux ls"
+
+alias cel="conda env list"
+alias cl="conda list"
+
