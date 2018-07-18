@@ -169,7 +169,7 @@ fi
 # conda activate
 
 # Enable aliases in shell.
-source .aliases
+source $HOME/dotfiles/.aliases
 
 # Enable shortcuts
-source .shortcuts
+source $HOME/dotfiles/.shortcuts
