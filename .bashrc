@@ -193,3 +193,6 @@ alias fixcam="sudo killall VDCAssistant"
 alias saa="source activate autograd_cupy_dev"
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
+
+# Enable MKL with Theano
+export MKL_THREADING_LAYER=GNU
