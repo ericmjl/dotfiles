@@ -1,0 +1,7 @@
+# Shortcuts to my directories
+export github="$HOME/github"
+export dotfiles="$HOME/dotfiles"
+export anaconda="$HOME/anaconda"
+export downloads="$HOME/Downloads"
+export documents="$HOME/Documents"
+export desktop="$HOME/Desktop"
