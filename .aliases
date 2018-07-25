@@ -16,6 +16,7 @@ alias cel="conda env list"
 alias cl="conda list"
 alias ced="conda env remove -n"
 alias ce="conda env create -f environment.yml"
+alias ceu="conda env update -f"
 
 # Shell
 alias ..='cd ..'
@@ -25,6 +26,10 @@ alias bashedit="nano $HOME/.bashrc"
 
 # Miscellaneous
 alias fixcam="sudo killall VDCAssistant"
+
+# Lektor
+alias lsp="lektor server -p 5555"
+
 
 # Git Aliases
 alias gs="git status"
@@ -37,6 +42,8 @@ alias gps="git push"
 alias gl="git log"
 alias gk="git checkout"
 alias gb="git branch"
+alias gr="git remote"
+alias gf="git fetch"
 
 # tmux
 alias ta="tmux a -t"
@@ -45,3 +52,4 @@ alias tl="tmux ls"
 
 # open Mac apps
 alias safari="open -a Safari"
+
