@@ -9,13 +9,3 @@ always_yes: true
 
 auto_update_conda: true
 
-create_default_packages:
-  - ipython
-  - ipykernel
-  - jupyter
-  - jupyterlab
-  - isort
-  - pycodestyle
-  - pytest
-  - autopep8
-  - jupyter_contrib_nbextensions
