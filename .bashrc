@@ -16,7 +16,7 @@ export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
 export PATH="/usr/local/bin:$PATH"
 
 # added by Eric to access CUDA
-export PATH=/usr/local/cuda-8.0/bin:$PATH
+export PATH=/usr/local/cuda-9.2/bin:$PATH
 
 # Enable conda-auto-env
 source $HOME/dotfiles/conda_auto_env.sh
