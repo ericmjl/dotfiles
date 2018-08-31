@@ -23,8 +23,16 @@ alias l='ls'
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
 
-# Miscellaneous
-alias fixcam="sudo killall VDCAssistant"
+# macOS-specific
+case "$OSTYPE" in
+  darwin*)
+  	# "fixcam" for work laptop
+	alias fixcam="sudo killall VDCAssistant"
+	# safari
+	alias safari="open -a Safari"
+	# gsed
+	alias sed="gsed"
+esac
 
 # Git Aliases
 alias gs="git status"
@@ -42,6 +50,3 @@ alias gb="git branch"
 alias ta="tmux a -t"
 alias tn="tmux new -s"
 alias tl="tmux ls"
-
-# open Mac apps
-alias safari="open -a Safari"
