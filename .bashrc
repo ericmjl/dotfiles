@@ -21,11 +21,11 @@ export PATH=/usr/local/cuda-8.0/bin:$PATH
 # Enable conda-auto-env
 source $HOME/dotfiles/conda_auto_env.sh
 
-# Proxy addresses used for work. Checks to see if .http_proxies is present before sourcing it.
-if [ $(which nibrproxy) ]; then
-    source nibrproxy
+# Proxy addresses used for work. Checks to see if the "proxy" executable is present before sourcing it.
+if [ $(which proxy) ]; then
+    source proxy
 else
-    echo "nibrproxy not found, not sourcing"
+    echo "proxy not found, not sourcing"
 fi
 
 # Customizes the bash shell colours
