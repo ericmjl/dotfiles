@@ -1,8 +1,8 @@
-# Link to LuaJIT
-# export PATH="$HOME/luajit/bin:$PATH"
+# PATH variable.
 
 # Link to Anaconda Python and other binaries folders
-export PATH="$HOME/anaconda/bin:$PATH"
+# export PATH="$HOME/anaconda/bin:$PATH"
+. /Users/ericmjl/anaconda/etc/profile.d/conda.sh
 export PATH="$HOME/bin:$PATH"
 
 # added by Eric to access Tex
@@ -12,8 +12,8 @@ export PATH="$PATH:/Library/Tex"
 export PATH="$PATH:$HOME/pypy/bin"
 export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
 
-# added by Eric to access git and nano
-export PATH="/usr/local/bin:$PATH"
+# added by Eric to access git and nano from Homebrew
+export PATH="$PATH:/usr/local/bin"
 
 # added by Eric to access CUDA
 export PATH=/usr/local/cuda-9.2/bin:$PATH

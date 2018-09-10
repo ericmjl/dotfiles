@@ -8,10 +8,8 @@ alias jp="jupyter notebook"
 alias jl="jupyter lab"
 
 # Conda
-alias sa="source activate"
-alias sd="source deactivate"
-alias saa="source activate autograd_cupy_dev"
-alias sab="source activate bayesian-modelling-tutorial"
+alias ca="conda activate"
+alias cd="conda deactivate"
 alias cel="conda env list"
 alias cl="conda list"
 alias ced="conda env remove -n"
