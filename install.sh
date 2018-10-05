@@ -40,7 +40,7 @@ BREW_PACKAGES=(
     "nano" # let's get an enhanced nano!
     "gnused" # get "standard" sed that is used on Linux.
     "tree"  # get the standard "tree" command on Linux.
-    "gsed"  # get standard sed from Linux.
+    "gnu-sed"  # get standard sed from Linux.
 )
 
 
