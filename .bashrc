@@ -163,9 +163,6 @@ if test -e .rcode; then
 fi
 
 
-# Activate base conda environment
-conda activate
-
 # Enable MKL with Theano
 export MKL_THREADING_LAYER=GNU
 
@@ -177,4 +174,4 @@ source $HOME/dotfiles/.shortcuts
 
 # Enable conda
 source $HOME/anaconda/etc/profile.d/conda.sh
-
+conda activate
