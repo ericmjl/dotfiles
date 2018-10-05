@@ -8,10 +8,8 @@ alias jp="jupyter notebook"
 alias jl="jupyter lab"
 
 # Conda
-alias sa="source activate"
-alias sd="source deactivate"
-alias saa="source activate autograd_cupy_dev"
-alias sab="source activate bayesian-modelling-tutorial"
+alias activate="conda activate"
+alias deactivate="conda deactivate"
 alias cel="conda env list"
 alias cl="conda list"
 alias ced="conda env remove -n"
@@ -24,8 +22,16 @@ alias l='ls'
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
 
-# Miscellaneous
-alias fixcam="sudo killall VDCAssistant"
+# macOS-specific
+case "$OSTYPE" in
+  darwin*)
+  	# "fixcam" for work laptop
+	alias fixcam="sudo killall VDCAssistant"
+	# safari
+	alias safari="open -a Safari"
+	# gsed
+	alias sed="gsed"
+esac
 
 # Lektor
 alias lsp="lektor server -p 5555"
@@ -52,4 +58,3 @@ alias tl="tmux ls"
 
 # open Mac apps
 alias safari="open -a Safari"
-

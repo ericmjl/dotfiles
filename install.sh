@@ -38,6 +38,8 @@ BREW_PACKAGES=(
     "imagemagick" # image processing library
     "mobile-shell" # mobile shell!
     "nano" # let's get an enhanced nano!
+    "gnused" # get "standard" sed that is used on Linux.
+    "tree"  # get the standard "tree" command on Linux.
 )
 
 

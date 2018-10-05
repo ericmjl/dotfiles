@@ -1,5 +1,4 @@
-# Link to LuaJIT
-# export PATH="$HOME/luajit/bin:$PATH"
+# PATH variable.
 
 # Link to Anaconda Python and other binaries folders
 export PATH="$HOME/bin:$PATH"
@@ -11,11 +10,11 @@ export PATH="$PATH:/Library/Tex"
 export PATH="$PATH:$HOME/pypy/bin"
 export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
 
-# added by Eric to access git and nano
-export PATH="/usr/local/bin:$PATH"
+# added by Eric to access git and nano from Homebrew
+export PATH="$PATH:/usr/local/bin"
 
 # added by Eric to access CUDA
-export PATH=/usr/local/cuda-8.0/bin:$PATH
+export PATH=/usr/local/cuda-9.2/bin:$PATH
 
 # Enable conda-auto-env
 source $HOME/dotfiles/conda_auto_env.sh
@@ -164,8 +163,8 @@ if test -e .rcode; then
 fi
 
 
-# source /home/maer3/anaconda/etc/profile.d/conda.sh
-# conda activate
+# Activate base conda environment
+conda activate
 
 # Enable MKL with Theano
 export MKL_THREADING_LAYER=GNU
