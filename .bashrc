@@ -2,7 +2,6 @@
 # export PATH="$HOME/luajit/bin:$PATH"
 
 # Link to Anaconda Python and other binaries folders
-export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # added by Eric to access Tex
@@ -176,3 +175,7 @@ source $HOME/dotfiles/.aliases
 
 # Enable shortcuts
 source $HOME/dotfiles/.shortcuts
+
+# Enable conda
+source $HOME/anaconda/etc/profile.d/conda.sh
+
