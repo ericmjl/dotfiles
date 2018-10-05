@@ -1,8 +1,6 @@
 # PATH variable.
 
 # Link to Anaconda Python and other binaries folders
-# export PATH="$HOME/anaconda/bin:$PATH"
-. $HOME/anaconda/etc/profile.d/conda.sh
 export PATH="$HOME/bin:$PATH"
 
 # added by Eric to access Tex
@@ -21,11 +19,11 @@ export PATH=/usr/local/cuda-9.2/bin:$PATH
 # Enable conda-auto-env
 source $HOME/dotfiles/conda_auto_env.sh
 
-# Proxy addresses used for work. Checks to see if .http_proxies is present before sourcing it.
-if [ $(which nibrproxy) ]; then
-    source nibrproxy
+# Proxy addresses used for work. Checks to see if the "proxy" executable is present before sourcing it.
+if [ $(which proxy) ]; then
+    source proxy
 else
-    echo "nibrproxy not found, not sourcing"
+    echo "proxy not found, not sourcing"
 fi
 
 # Customizes the bash shell colours
@@ -165,9 +163,6 @@ if test -e .rcode; then
 fi
 
 
-# source /home/maer3/anaconda/etc/profile.d/conda.sh
-# conda activate
-
 # Enable MKL with Theano
 export MKL_THREADING_LAYER=GNU
 
@@ -176,3 +171,7 @@ source $HOME/dotfiles/.aliases
 
 # Enable shortcuts
 source $HOME/dotfiles/.shortcuts
+
+# Enable conda
+source $HOME/anaconda/etc/profile.d/conda.sh
+conda activate

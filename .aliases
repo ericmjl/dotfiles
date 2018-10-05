@@ -14,6 +14,7 @@ alias cel="conda env list"
 alias cl="conda list"
 alias ced="conda env remove -n"
 alias ce="conda env create -f environment.yml"
+alias ceu="conda env update -f"
 
 # Shell
 alias ..='cd ..'
@@ -32,6 +33,10 @@ case "$OSTYPE" in
 	alias sed="gsed"
 esac
 
+# Lektor
+alias lsp="lektor server -p 5555"
+
+
 # Git Aliases
 alias gs="git status"
 alias ga="git add"
@@ -43,8 +48,13 @@ alias gps="git push"
 alias gl="git log"
 alias gk="git checkout"
 alias gb="git branch"
+alias gr="git remote"
+alias gf="git fetch"
 
 # tmux
 alias ta="tmux a -t"
 alias tn="tmux new -s"
 alias tl="tmux ls"
+
+# open Mac apps
+alias safari="open -a Safari"
