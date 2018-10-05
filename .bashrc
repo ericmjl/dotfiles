@@ -2,7 +2,7 @@
 
 # Link to Anaconda Python and other binaries folders
 # export PATH="$HOME/anaconda/bin:$PATH"
-. /Users/ericmjl/anaconda/etc/profile.d/conda.sh
+. $HOME/anaconda/etc/profile.d/conda.sh
 export PATH="$HOME/bin:$PATH"
 
 # added by Eric to access Tex
