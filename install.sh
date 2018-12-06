@@ -41,6 +41,7 @@ BREW_PACKAGES=(
     "gnused" # get "standard" sed that is used on Linux.
     "tree"  # get the standard "tree" command on Linux.
     "gnu-sed"  # get standard sed from Linux.
+    "exa"  # an enhanced, modern ls!
 )
 
 
