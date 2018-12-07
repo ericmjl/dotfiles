@@ -18,11 +18,11 @@ alias ceu="conda env update -f"
 
 # Shell
 alias ..='cd ..'
-alias ls='exa --long --header --git'
+alias ls='exa --long --git -a --header'
 alias l='ls'
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
-alias tree='exa --tree --level=2 --long'
+alias tree='exa --tree --level=2 --long -a --header --git'
 
 # macOS-specific
 case "$OSTYPE" in
