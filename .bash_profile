@@ -12,3 +12,10 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+
+
+case "$OSTYPE" in
+    linux*)
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+esac
+
