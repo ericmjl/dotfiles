@@ -66,6 +66,17 @@ function install_nanorc {
     cat ~/.nano/nanorc >> ~/.nanorc
 }
 
+# Install exa
+export EXA_VERSION=0.8.0
+function install_exa {
+    cd $HOME/bin
+    wget https://github.com/ogham/exa/releases/download/v$EXA_VERSION/exa-linux-x86_64-$EXA_VERSION.zip
+    unzip exa-linux-x86_64-$EXA_VERSION.zip
+    mv exa-linux-x86_64 exa
+    chmod a+x exa
+    rm exa-linux-*
+}
+
 
 # If OS is Mac OS X, then do the following:
 case "$OSTYPE" in
@@ -112,6 +123,9 @@ case "$OSTYPE" in
     # Install nanorc
     install_nanorc
 
+    # Install exa
+    install_exa
+
     # Install conda
     which conda
     if [[ $? != 0 ]]; then
@@ -121,6 +135,7 @@ case "$OSTYPE" in
     else
        echo "anaconda already installed. moving on..."
     fi ;;
+
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles
