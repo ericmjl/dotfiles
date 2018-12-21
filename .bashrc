@@ -175,3 +175,10 @@ source $HOME/dotfiles/.shortcuts
 # Enable conda
 source $HOME/anaconda/etc/profile.d/conda.sh
 conda activate
+
+# Set CUDA path
+case $HOSTNAME in
+    ubuntu-gpu)
+        echo "setting CUDA_PATH environment variable"
+        export CUDA_PATH=/usr/local/cuda
+esac
