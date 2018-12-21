@@ -16,6 +16,9 @@ alias ced="conda env remove -n"
 alias ce="conda env create -f environment.yml"
 alias ceu="conda env update -f"
 
+# Text editing
+alias nano="nano --softwrap"
+
 # Shell
 alias ..='cd ..'
 alias ls='exa --long --git -a --header'
