@@ -167,7 +167,7 @@ fi
 export MKL_THREADING_LAYER=GNU
 
 # Enable aliases in shell.
-source $HOME/dotfiles/.aliases
+source $HOME/dotfiles/.bash_aliases
 
 # Enable shortcuts
 source $HOME/dotfiles/.shortcuts
@@ -175,6 +175,13 @@ source $HOME/dotfiles/.shortcuts
 # Enable conda
 source $HOME/anaconda/etc/profile.d/conda.sh
 conda activate
+
+# Set CUDA path
+case $HOSTNAME in
+    ubuntu-gpu)
+        echo "setting CUDA_PATH environment variable"
+        export CUDA_PATH=/usr/local/cuda
+esac
 
 # Temporarily added on 30 December 2018 as fallback
 # Reference: https://gist.github.com/dongyuwei/3668fcc69f557dd32c46#gistcomment-2100016
