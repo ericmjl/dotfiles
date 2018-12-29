@@ -29,19 +29,25 @@ if [ ! -d "$HOME/github" ]; then
 fi
 
 BREW_PACKAGES=(
-    "bash" # might as well get an updated terminal shell
-    "git" # version control https://git-scm.com/
+    "bash"            # might as well get an updated terminal shell
+    "git"             # version control https://git-scm.com/
     "bash-completion" # bash completion for git and other things  https://github.com/scop/bash-completion
-    "gcc" # gnu compiler collection https://gcc.gnu.org/
-    "tmux" # window management https://tmux.github.io/
-    "wget" # curl alternative https://www.gnu.org/software/wget/
-    "imagemagick" # image processing library
-    "mobile-shell" # mobile shell!
-    "nano" # let's get an enhanced nano!
-    "gnu-sed" # get "standard" sed that is used on Linux.
-    "tree"  # get the standard "tree" command on Linux.
-    "gnu-sed"  # get standard sed from Linux.
-    "exa"  # an enhanced, modern ls!
+    "gcc"             # gnu compiler collection https://gcc.gnu.org/
+    "tmux"            # window management https://tmux.github.io/
+    "wget"            # curl alternative https://www.gnu.org/software/wget/
+    "imagemagick"     # image processing library
+    "mobile-shell"    # mobile shell!
+    "nano"            # let's get an enhanced nano!
+    "gnu-sed"         # get "standard" sed that is used on Linux.
+    "tree"            # get the standard "tree" command on Linux.
+    "gnu-sed"         # get standard sed from Linux.
+    "exa"             # an enhanced, modern ls!
+    "exiftool"        # just in case
+    "heroku-cli"      # for heroku apps
+    "libreoffice"     # for worship-manager
+    "freetype"        # for worship-manager
+    "libmagic"        # for worship-manager
+    "imagemagick"     # for worship-manager
 )
 
 
@@ -67,6 +73,7 @@ function install_nanorc {
 }
 
 # Install exa
+# Intended for Linux use only
 export EXA_VERSION=0.8.0
 function install_exa {
     cd $HOME/bin
