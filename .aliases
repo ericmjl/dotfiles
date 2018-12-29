@@ -60,3 +60,6 @@ alias tl="tmux ls"
 
 # open Mac apps
 alias safari="open -a Safari"
+
+# make sure pico opens up nano
+alias pico="nano"
