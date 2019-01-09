@@ -21,7 +21,7 @@ alias nano="nano --softwrap"
 
 # Shell
 alias ..='cd ..'
-alias ls='exa --long --git -a --header'
+alias ls='exa --long --git -a --header --group'
 alias l='ls'
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
