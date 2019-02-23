@@ -1,20 +1,5 @@
 # PATH variable.
-
-# Link to Anaconda Python and other binaries folders
-export PATH="$HOME/bin:$PATH"
-
-# added by Eric to access Tex
-export PATH="$PATH:/Library/Tex"
-
-# added by Eric to access pypy
-export PATH="$PATH:$HOME/pypy/bin"
-export PATH="$PATH:/usr/local/Cellar/pypy3/5.9.0/bin"
-
-# added by Eric to access git and nano from Homebrew
-export PATH="$PATH:/usr/local/bin"
-
-# added by Eric to access CUDA
-export PATH=/usr/local/cuda-9.2/bin:$PATH
+source $HOME/dotfiles/.path
 
 # Enable conda-auto-env
 source $HOME/dotfiles/conda_auto_env.sh

@@ -1,0 +1,8 @@
+# Link to home folder binaries
+export PATH="$HOME/bin:$PATH"
+
+# added by Eric to access Tex
+export PATH="$PATH:/Library/Tex"
+
+# added by Eric to access git and nano from Homebrew
+export PATH="$PATH:/usr/local/bin"
