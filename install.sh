@@ -59,7 +59,7 @@ function install_anaconda {
     export PATH=$HOME/anaconda/bin:$PATH
 
     # Install basic data science stack into default environment
-    conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel
+    conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel nodejs
 
     jupyter notebook --generate-config
 
