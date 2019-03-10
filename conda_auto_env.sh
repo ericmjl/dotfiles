@@ -14,7 +14,9 @@
 function conda_auto_env() {
   if [ -e "environment.yml" ]; then
     # echo "environment.yml file found"
-    ENV=$(head -n 1 environment.yml | cut -f2 -d ' ')
+    # Get environment name associated with 'name' variable in file
+    ENV=`grep 'name:' environment.yml | tail -n1 | awk '{ print $2}'`
+
     # Check if you are already in the environment
     if [[ $PATH != *$ENV* ]]; then
       # Check if the environment exists
