@@ -26,8 +26,28 @@ function conda_auto_env() {
       else
         # Create the environment and activate
         echo "Conda env '$ENV' doesn't exist."
-        conda env create -q
-        conda activate $ENV
+
+        while true; do
+            select choice in CREATE IGNORE
+            do
+                echo "$REPLY : $choice"
+                break
+            done
+
+            case $choice in
+                "CREATE" )
+                    echo "Creating new conda environment from 'environment.yml' file found in folder..";
+                    sleep 2;
+                    conda env create -q;
+                    conda activate $ENV;
+                    break ;;
+                "IGNORE" )
+                    echo "Ceasing creation of new conda environment";
+                    break ;;
+                * )
+                    echo "Please Choose Option 1, or 2" ;;
+            esac
+        done
       fi
     fi
   fi
