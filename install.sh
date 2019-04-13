@@ -60,7 +60,7 @@ function install_anaconda {
     export PATH=$HOME/anaconda/bin:$PATH
 
     # Install basic data science stack into default environment
-    conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel
+    conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel nodejs
 
     jupyter notebook --generate-config
     # We are done at this point, move on.
@@ -144,8 +144,6 @@ case "$OSTYPE" in
        echo "anaconda already installed. moving on..."
     fi ;;
 
-    # Install a mnt/ directory in home folder for mounting folders.
-    mkdir -p $HOME/mnt
 esac
 
 # Symlink bash_profile and bashrc to point to dotfiles
