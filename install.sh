@@ -36,12 +36,12 @@ BREW_PACKAGES=(
     "tmux"                # window management https://tmux.github.io/
     "wget"                # curl alternative https://www.gnu.org/software/wget/
     "imagemagick"         # image processing library
-    "mobile-shell"        # mobile shell!
-    "nano"                # let's get an enhanced nano!
+    "mobile-shell"        # mobile shell
+    "nano"                # get an enhanced nano
     "gnu-sed"             # get "standard" sed that is used on Linux.
     "tree"                # get the standard "tree" command on Linux.
     "gnu-sed"             # get standard sed from Linux.
-    "exa"                 # an enhanced, modern ls!
+    "exa"                 # an enhanced, modern ls
     "exiftool"            # just in case
     "heroku-cli"          # for heroku apps
     "libreoffice"         # for worship-manager
@@ -49,6 +49,7 @@ BREW_PACKAGES=(
     "libmagic"            # for worship-manager
     "imagemagick"         # for worship-manager
     "heroku/brew/heroku"  # for heroku
+    "micro"               # micro text editor
 )
 
 
@@ -62,7 +63,6 @@ function install_anaconda {
     conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel
 
     jupyter notebook --generate-config
-
     # We are done at this point, move on.
     echo "anaconda successfully installed. moving on..."
 }
