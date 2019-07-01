@@ -15,6 +15,7 @@ alias cl="conda list"
 alias ced="conda env remove -n"
 alias ce="conda env create -f environment.yml"
 alias ceu="conda env update -f"
+alias condaupdate="conda update -n base -c defaults conda"
 
 # Text editing
 alias nano="nano --softwrap"
@@ -39,7 +40,7 @@ case "$OSTYPE" in
 esac
 
 # Lektor
-alias lsp="lektor server -p 5555"
+alias lsp="lektor server -p 8999 -h 0.0.0.0"
 
 
 # Git Aliases
