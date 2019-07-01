@@ -6,3 +6,10 @@ export PATH="$PATH:/Library/Tex"
 
 # added by Eric to access git and nano from Homebrew
 export PATH="$PATH:/usr/local/bin"
+
+
+# added by Eric to access dat
+case "$OSTYPE" in
+    linux*) 
+        export PATH="$PATH:/home/ericmjl/.dat/releases/dat-13.11.5-linux-x64"
+esac
