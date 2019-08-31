@@ -171,3 +171,7 @@ esac
 # Temporarily added on 30 December 2018 as fallback
 # Reference: https://gist.github.com/dongyuwei/3668fcc69f557dd32c46#gistcomment-2100016
 export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/opt/imagemagick@6/lib/
+
+
+# Set editor to nano
+export EDITOR=nano
