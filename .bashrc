@@ -4,6 +4,9 @@ source $HOME/dotfiles/.path
 # Enable conda-auto-env
 source $HOME/dotfiles/conda_auto_env.sh
 
+# Enable git-completion
+source $HOME/.git-completion.bash
+
 # Proxy addresses used for work. Checks to see if the "proxy" executable is present before sourcing it.
 if [ $(which proxy) ]; then
     source proxy
