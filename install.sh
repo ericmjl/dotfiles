@@ -73,8 +73,13 @@ function install_anaconda {
 
 # Install nanorc
 function install_nanorc {
-  git clone git@github.com:ericmjl/nanorc.git ~/.nano
-  cat ~/.nano/nanorc >> ~/.nanorc
+  echo "Checking to see if nanorcs have been installed..."
+  if [ ! -d "$HOME/.nano" ]; then
+    echo "nanorcs have not been installed. Installing..."
+    git clone git@github.com:ericmjl/nanorc.git ~/.nano
+    cat ~/.nano/nanorc >> ~/.nanorc
+  fi
+  echo "nanorcs have been installed. Continuing..."
 }
 
 # Install exa
@@ -96,6 +101,12 @@ case "$OSTYPE" in
     # Symlink nano preferences
     install_nanorc
 
+    # Install xcode-select
+    xcode-select --install
+    echo "Waiting for xcode-select to install."
+    echo "Press any key to continue when xcode-select is installed."
+    read -n 1 -s
+
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
     which -s brew
@@ -113,9 +124,6 @@ case "$OSTYPE" in
       then
         echo "Installing $pkg"
         brew install "$pkg"
-      else
-        echo "$pkg already installed; attempting upgrade"
-        brew upgrade "$pkg"
       fi
     done
     echo "Homebrew and favorites successfully installed, moving on..."
@@ -129,7 +137,20 @@ case "$OSTYPE" in
       install_anaconda
     else
       echo "anaconda already installed. moving on..."
-    fi ;;
+    fi
+
+    # Change shell to Homebrew-installed bash shell
+    SHELL_PATH=/usr/local/bin/bash
+    if cat /etc/shells | grep $SHELL_PATH; then
+      echo $SHELL_PATH already in shells
+    else
+      echo "Adding $SHELL_PATH to shells, password required..."
+      echo $SHELL_PATH | sudo tee -a /etc/shells
+      echo "Added $SHELL_PATH to shells"
+    fi
+    chsh -s $SHELL_PATH
+
+    ;;  # necessary after each case
 
   linux*)
     # Install nanorc
@@ -139,6 +160,7 @@ case "$OSTYPE" in
     install_exa
 
     # Install conda
+    echo "Checking to see if anaconda has been installed..."
     which conda
     if [[ $? != 0 ]]; then
       echo "anaconda not installed; installing now..."
@@ -146,10 +168,13 @@ case "$OSTYPE" in
       install_anaconda
     else
       echo "anaconda already installed. moving on..."
-    fi ;;
+    fi
+
+    ;;  # Necessary after each case.
 esac
 
-# Install bash-completion
+# Install git-completion
+echo "Installing git-completion for Bash."
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 
 # Symlink bash_profile and bashrc to point to dotfiles

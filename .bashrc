@@ -1,3 +1,6 @@
+# Enable auto-cd
+shopt -s autocd
+
 # PATH variable.
 source $HOME/dotfiles/.path
 
