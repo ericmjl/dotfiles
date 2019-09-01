@@ -31,6 +31,7 @@ if [ ! -d "$HOME/github" ]; then
   mkdir $HOME/github
 fi
 
+
 BREW_PACKAGES=(
   "bash"                # might as well get an updated terminal shell
   "git"                 # version control https://git-scm.com/
@@ -147,6 +148,9 @@ case "$OSTYPE" in
       echo "anaconda already installed. moving on..."
     fi ;;
 esac
+
+# Install bash-completion
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 
 # Symlink bash_profile and bashrc to point to dotfiles
 echo "Symlinking .bash_profile and .bashrc"
