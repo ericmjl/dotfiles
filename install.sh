@@ -76,8 +76,11 @@ function install_nanorc {
   echo "Checking to see if nanorcs have been installed..."
   if [ ! -d "$HOME/.nano" ]; then
     echo "nanorcs have not been installed. Installing..."
-    git clone git@github.com:ericmjl/nanorc.git ~/.nano
-    cat ~/.nano/nanorc >> ~/.nanorc
+    git clone git@github.com:ericmjl/nanorc.git $HOME/.nano
+  fi
+  if [! -d "$HOME/.nanorc"]; then
+    echo "Copying nanorc to the correct location..."
+    cp $HOME/.nano/nanorc $HOME/.nanorc
   fi
   echo "nanorcs have been installed. Continuing..."
 }
