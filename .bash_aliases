@@ -31,12 +31,12 @@ alias tree='exa --tree --level=2 --long -a --header --git'
 # macOS-specific
 case "$OSTYPE" in
   darwin*)
-  	# "fixcam" for work laptop
-	alias fixcam="sudo killall VDCAssistant"
-	# safari
-	alias safari="open -a Safari"
-	# gsed
-	alias sed="gsed"
+    # "fixcam" for work laptop
+    alias fixcam="sudo killall VDCAssistant"
+    # safari
+    alias safari="open -a Safari"
+    # gsed
+    alias sed="gsed"
 esac
 
 # Lektor
