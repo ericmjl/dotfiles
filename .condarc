@@ -1,11 +1,11 @@
 anaconda_upload: true
 
 channels:
-  - defaults
   - conda-forge
+  - defaults
+  - anaconda
   - ericmjl
 
 always_yes: true
 
 auto_update_conda: true
-
