@@ -1,15 +1,37 @@
-# Link to home folder binaries
+echo "Linking to home folder binaries."
 export PATH="$HOME/bin:$PATH"
+echo "PATH is now $PATH"
 
-# added by Eric to access Tex
+echo "Adding Tex to PATH"
 export PATH="$PATH:/Library/Tex"
+echo "PATH is now $PATH"
 
-# added by Eric to access git and nano from Homebrew
+echo "Adding /usr/local/bin to PATH"
 export PATH="$PATH:/usr/local/bin"
+echo "PATH is now $PATH"
 
 
-# added by Eric to access dat
+# Add in cargo for Rust
+echo "Adding cargo for rust to PATH"
+export PATH=$HOME/.cargo/bin:$PATH
+echo "PATH is now $PATH"
+
+# Linux-specific things.
 case "$OSTYPE" in
-    linux*) 
-        export PATH="$PATH:/home/ericmjl/.dat/releases/dat-13.11.5-linux-x64"
+  linux*)
+    echo "Adding dat to PATH"
+    export PATH=$PATH:/home/ericmjl/.dat/releases/dat-13.11.5-linux-x64
+    echo "PATH is now $PATH"
+
+    # Linuxbrew stuff must take 2nd fiddle to conda,
+    # so we add this first, then add conda paths.
+    echo "Adding linuxbrew to PATH"
+    export PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
+    echo "PATH is now $PATH" ;;
 esac
+
+# Enable conda
+echo "Adding conda to PATH"
+source $HOME/anaconda/etc/profile.d/conda.sh
+conda activate
+echo "PATH is now $PATH"

@@ -2,6 +2,7 @@
 shopt -s autocd
 
 # PATH variable.
+echo "sourcing $HOME/dotfiles/.path"
 source $HOME/dotfiles/.path
 
 # Enable conda-auto-env
@@ -135,17 +136,21 @@ esac
 if test -d /usr/prog/modules/all; then
     module use /usr/prog/modules/all
     module load proxy/GLOBAL
+    echo "PATH is now $PATH"
 fi
 if test -d /cm/shared/modulefiles; then
     module use /cm/shared/modulefiles
     module load uge
+    echo "PATH is now $PATH"
 fi
 if test -d /cm/local/modulefiles; then
     module use /cm/local/modulefiles
+    echo "PATH is now $PATH"
 fi
 
 if test -d /usr/prog/isld/modules; then
     module use /usr/prog/isld/modules
+    echo "PATH is now $PATH"
 fi
 
 # Source .rcode for remote visual studio code editing.
@@ -163,15 +168,22 @@ source $HOME/dotfiles/.bash_aliases
 # Enable shortcuts
 source $HOME/dotfiles/.shortcuts
 
-# Enable conda
-source $HOME/anaconda/etc/profile.d/conda.sh
-conda activate
-
 # Set CUDA path
 case $HOSTNAME in
     ubuntu-gpu)
         echo "setting CUDA_PATH environment variable"
         export CUDA_PATH=/usr/local/cuda
+esac
+
+# Set Linuxbrew path
+case "$OSTYPE" in
+  linux*)
+    export HOMEBREW_PREFIX="$HOME/.linuxbrew";
+    export HOMEBREW_CELLAR="$HOME/.linuxbrew/Cellar";
+    export HOMEBREW_REPOSITORY="$HOME/.linuxbrew/Homebrew";
+    export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH";
+    export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH";
+  ;;
 esac
 
 # Temporarily added on 30 December 2018 as fallback
