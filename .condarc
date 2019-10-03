@@ -2,6 +2,9 @@ anaconda_upload: true
 
 channels:
   - conda-forge
+  - rapidsai
+  - nvidia
+  - numba
   - defaults
   - anaconda
   - ericmjl
