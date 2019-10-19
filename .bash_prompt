@@ -75,8 +75,3 @@ PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${cyan}\]\")"; # Git r
 PS1+="\n";                # newline
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
-
-# Enable colors in the terminal when doing `ls`.
-# See: http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced

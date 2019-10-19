@@ -20,6 +20,11 @@ fi
 
 source $HOME/dotfiles/.bash_prompt
 
+# Enable colors in the terminal when doing `ls`.
+# See: http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 # OS-specific things.
 case "$OSTYPE" in
     solaris*) ;;
