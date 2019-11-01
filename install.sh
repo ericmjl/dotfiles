@@ -18,8 +18,8 @@ if [ ! -d "$HOME/.ssh" ]; then
   # We store custom configurations that aren't version controlled in this
   # directory. Examples include work configs that I don't want up on GitHub.
   mkdir $HOME/.ssh/config.d
+  echo "# For SSH configs that do not live on GitHub" > $HOME/.ssh/config.d/README
 fi
-
 
 # Make the Documents directory under HOME.
 if [ ! -d "$HOME/Documents" ]; then
@@ -30,7 +30,6 @@ fi
 if [ ! -d "$HOME/github" ]; then
   mkdir $HOME/github
 fi
-
 
 BREW_PACKAGES=(
   "bash"                # might as well get an updated terminal shell
@@ -54,48 +53,10 @@ BREW_PACKAGES=(
   "imagemagick"         # for worship-manager
   "heroku/brew/heroku"  # for heroku
   "micro"               # micro text editor
+  "zsh"                 # z-shell
 )
 
-
-# Installs anaconda according to my customizations
-function install_anaconda {
-  bash anaconda.sh -b -p $HOME/anaconda
-  rm anaconda.sh
-  export PATH=$HOME/anaconda/bin:$PATH
-
-  # Install basic data science stack into default environment
-  conda install --yes pandas scipy numpy matplotlib seaborn jupyter ipykernel nodejs
-
-  jupyter notebook --generate-config
-  # We are done at this point, move on.
-  echo "anaconda successfully installed. moving on..."
-}
-
-# Install nanorc
-function install_nanorc {
-  echo "Checking to see if nanorcs have been installed..."
-  if [ ! -d "$HOME/.nano" ]; then
-    echo "nanorcs have not been installed. Installing..."
-    git clone git@github.com:ericmjl/nanorc.git $HOME/.nano
-  fi
-  if [! -d "$HOME/.nanorc" ]; then
-    ln -s $HOME/.nano/nanorc $HOME/.nanorc
-  fi
-  echo "nanorcs have been installed. Continuing..."
-}
-
-# Install exa
-# Intended for Linux use only
-export EXA_VERSION=0.8.0
-function install_exa {
-  cd $HOME/bin
-  wget https://github.com/ogham/exa/releases/download/v$EXA_VERSION/exa-linux-x86_64-$EXA_VERSION.zip
-  unzip exa-linux-x86_64-$EXA_VERSION.zip
-  mv exa-linux-x86_64 exa
-  chmod a+x exa
-  rm exa-linux-*
-}
-
+source install_functions.sh
 
 # If OS is Mac OS X, then do the following:
 case "$OSTYPE" in
@@ -112,7 +73,7 @@ case "$OSTYPE" in
     # Check to see if Homebrew is installed.
     echo "checking to see if Homebrew is installed."
     which -s brew
-    if [[ $? != 0 ]]; then # check if exit code is not zero --> brew not installed.
+    if [[ $? != 0 ]]; then # if exit code is not zero --> brew not installed.
       echo "Homebrew is not installed; instaling now..."
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
@@ -151,6 +112,9 @@ case "$OSTYPE" in
       echo "Added $SHELL_PATH to shells"
     fi
     chsh -s $SHELL_PATH
+
+    # Install Oh-My-Zsh
+    install_ohmyzsh
 
     ;;  # necessary after each case
 

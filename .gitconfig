@@ -4,8 +4,8 @@
     smudge = git media smudge %f
 
 [user]
-    name = Eric Ma
-    email = ericmajinglong@gmail.com
+	name = Eric Ma
+	email = ericmajinglong@gmail.com
 
 [filter "hawser"]
     clean = git hawser clean %f
@@ -76,8 +76,12 @@
 
 [mergetool]
     prompt = false
+[http]
 
-# [https]
-#     proxy = http://nibr-proxy.global.nibr.novartis.net:2011
-# [http]
-#     proxy = http://nibr-proxy.global.nibr.novartis.net:2011
+
+update-from = "!f() { git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --preserve-merges $1/$2; }; f"
+	proxy = http://nibr-proxy.global.nibr.novartis.net:2011
+[credential]
+	helper = cache --timeout=99999999999
+[https]
+	proxy = http://nibr-proxy.global.nibr.novartis.net:2011

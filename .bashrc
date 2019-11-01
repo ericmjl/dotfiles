@@ -1,6 +1,3 @@
-# Enable auto-cd
-shopt -s autocd
-
 # PATH variable.
 echo "sourcing $HOME/dotfiles/.path"
 source $HOME/dotfiles/.path

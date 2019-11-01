@@ -22,11 +22,15 @@ alias nano="nano --softwrap"
 
 # Shell
 alias ..='cd ..'
-alias ls='exa --long --git -a --header --group'
+# Only alias ls to exa if exa is installed.
+which -s exa
+if [[ $? == 0 ]]; then
+    alias ls='exa --long --git -a --header --group'
+    alias tree='exa --tree --level=2 --long -a --header --git'
+fi
 alias l='ls'
 alias rebash="source $HOME/.bashrc"
 alias bashedit="nano $HOME/.bashrc"
-alias tree='exa --tree --level=2 --long -a --header --git'
 
 # macOS-specific
 case "$OSTYPE" in
@@ -41,7 +45,6 @@ esac
 
 # Lektor
 alias lsp="lektor server -p 8999 -h 0.0.0.0"
-
 
 # Git Aliases
 alias gs="git status"
