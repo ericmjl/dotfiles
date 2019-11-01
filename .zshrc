@@ -79,7 +79,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-Preferred editor for local and remote sessions
+# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nano'
 else
@@ -88,6 +88,11 @@ fi
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
+
+# Source other utilities
+source $HOME/dotfiles/.path
+source $HOME/dotfiles/conda_auto_env.sh
+source $HOME/bin/proxy
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -99,9 +104,6 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/dotfiles/.bash_aliases
 
-# Source other utilities
-source $HOME/dotfiles/conda_auto_env.sh
-source $HOME/bin/proxy
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

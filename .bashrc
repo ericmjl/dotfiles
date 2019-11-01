@@ -1,3 +1,11 @@
+# If zsh is installed but bash is still the default,
+# then we go directly to zsh.
+# Otherwise, loading of bash happens as per normal.
+which zsh
+if [[ $? == 0 ]]; then
+    zsh
+fi
+
 # PATH variable.
 echo "sourcing $HOME/dotfiles/.path"
 source $HOME/dotfiles/.path
@@ -54,26 +62,6 @@ esac
 # Commented out on 1 June 2018 for testing on RHEL.
 # alias nano='nano -\$wS'
 
-if test -d /usr/prog/modules/all; then
-    module use /usr/prog/modules/all
-    module load proxy/GLOBAL
-    echo "PATH is now $PATH"
-fi
-if test -d /cm/shared/modulefiles; then
-    module use /cm/shared/modulefiles
-    module load uge
-    echo "PATH is now $PATH"
-fi
-if test -d /cm/local/modulefiles; then
-    module use /cm/local/modulefiles
-    echo "PATH is now $PATH"
-fi
-
-if test -d /usr/prog/isld/modules; then
-    module use /usr/prog/isld/modules
-    echo "PATH is now $PATH"
-fi
-
 # Source .rcode for remote visual studio code editing.
 if test -e .rcode; then
     source .rcode
@@ -113,3 +101,10 @@ export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/opt/imagemagick@6/lib/
 
 # Set editor to nano
 export EDITOR=nano
+
+
+# Finally, add custom local commands.
+if test -f ~/.bashrc.custom; then
+    echo "Sourcing custom bashrc for this machine."
+    source ~/.bashrc.custom
+fi

@@ -23,7 +23,7 @@ alias nano="nano --softwrap"
 # Shell
 alias ..='cd ..'
 # Only alias ls to exa if exa is installed.
-which -s exa
+which exa
 if [[ $? == 0 ]]; then
     alias ls='exa --long --git -a --header --group'
     alias tree='exa --tree --level=2 --long -a --header --git'
