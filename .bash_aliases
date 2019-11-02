@@ -68,5 +68,9 @@ alias tl="tmux ls"
 # open Mac apps
 alias safari="open -a Safari"
 
-# make sure pico opens up nano
+# Command Line Tools Aliases
 alias pico="nano"
+alias diff="diff-so-fancy"
+alias cat="bat"
+alias diff="diff-so-fancy"
+alias find="fd"

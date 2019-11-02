@@ -54,8 +54,10 @@ BREW_PACKAGES=(
   "heroku/brew/heroku"  # for heroku
   "micro"               # micro text editor
   "zsh"                 # z-shell
-  "diff-so-fancy"       # diff-so-fancy https://github.com/so-fancy/diff-so-fancy
-
+  "diff-so-fancy"       # A replacement for diff: https://github.com/so-fancy/diff-so-fancy
+  "ripgrep"             # A replacement for grep: https://github.com/BurntSushi/ripgrep
+  "bat"			# A replacement for cat:  https://github.com/sharkdp/bat
+  "fd"			# A replacement for find: https://github.com/sharkdp/fd
 )
 
 source install_functions.sh
