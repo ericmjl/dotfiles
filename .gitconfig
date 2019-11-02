@@ -19,7 +19,7 @@
     required = true
 
 [color]
-    ui = auto
+	ui = true
 
 [alias]
     branches = !legit branches
@@ -36,6 +36,7 @@
 
 [core]
     editor = nano
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
     default = simple
@@ -46,7 +47,12 @@
     remote = green
 
 [color "diff"]
-    meta = cyan black bold
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 
 [color "status"]
     added = green
@@ -76,12 +82,13 @@
 
 [mergetool]
     prompt = false
-[http]
-
 
 update-from = "!f() { git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --preserve-merges $1/$2; }; f"
 	proxy = http://nibr-proxy.global.nibr.novartis.net:2011
 [credential]
 	helper = cache --timeout=99999999999
-[https]
-	proxy = http://nibr-proxy.global.nibr.novartis.net:2011
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

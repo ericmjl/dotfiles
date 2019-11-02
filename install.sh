@@ -54,6 +54,8 @@ BREW_PACKAGES=(
   "heroku/brew/heroku"  # for heroku
   "micro"               # micro text editor
   "zsh"                 # z-shell
+  "diff-so-fancy"       # diff-so-fancy https://github.com/so-fancy/diff-so-fancy
+
 )
 
 source install_functions.sh
