@@ -115,7 +115,7 @@ case "$OSTYPE" in
       echo $SHELL_PATH | sudo tee -a /etc/shells
       echo "Added $SHELL_PATH to shells"
     fi
-    chsh -s $SHELL_PATH
+    # chsh -s $SHELL_PATH
 
     # Install Oh-My-Zsh
     install_ohmyzsh
@@ -154,6 +154,7 @@ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 echo "Symlinking .bash_profile and .bashrc"
 ln -svf "$HOME/dotfiles/.bash_profile" ~
 ln -svf "$HOME/dotfiles/.bashrc" ~
+ln -svf "$HOME/dotfiles/.zshrc" ~
 
 # Symlink condarc
 echo "Symlinking .condarc"
