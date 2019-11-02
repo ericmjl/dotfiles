@@ -138,6 +138,9 @@ case "$OSTYPE" in
       echo "anaconda already installed. moving on..."
     fi
 
+    # Install other tools
+    sudo apt install bat ripgrep fd
+
     ;;  # Necessary after each case.
 esac
 
