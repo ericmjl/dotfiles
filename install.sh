@@ -167,9 +167,6 @@ ln -svf "$HOME/dotfiles/.gitconfig" ~
 echo "Symlinking script to pull all git repositories"
 ln -svf "$HOME/dotfiles/scripts/pull_git_repos.sh" "$github"
 
-# Symlink ssh-copy-id
-ln -svf "$HOME/dotfiles/ssh-copy-id.sh" "$HOME/bin/ssh-copy-id"
-
 # Symlink SSH config
 ln -svf "$HOME/dotfiles/.ssh/config" "$HOME/.ssh/config"
 
