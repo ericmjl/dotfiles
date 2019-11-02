@@ -27,6 +27,7 @@ case "$OSTYPE" in
     # so we add this first, then add conda paths.
     echo "Adding linuxbrew to PATH"
     export PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
+    export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
     echo "PATH is now $PATH" ;;
 esac
 
