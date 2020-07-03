@@ -7,6 +7,8 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
+export CLONE_DIR=`pwd`
+
 # Make a "/bin" directory under HOME, for storing my own custom binaries.
 if [ ! -d "$HOME/bin" ]; then
   mkdir $HOME/bin
@@ -152,24 +154,24 @@ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 
 # Symlink bash_profile and bashrc to point to dotfiles
 echo "Symlinking .bash_profile and .bashrc"
-ln -svf "$HOME/dotfiles/.bash_profile" ~
-ln -svf "$HOME/dotfiles/.bashrc" ~
-ln -svf "$HOME/dotfiles/.zshrc" ~
+ln -svf "$CLONE_DIR/.bash_profile" ~
+ln -svf "$CLONE_DIR/.bashrc" ~
+ln -svf "$CLONE_DIR/.zshrc" ~
 
 # Symlink condarc
 echo "Symlinking .condarc"
-ln -svf "$HOME/dotfiles/.condarc" ~
+ln -svf "$CLONE_DIR/.condarc" ~
 
 # Symlink gitconfig
 echo "Symlinking .gitconfig"
-ln -svf "$HOME/dotfiles/.gitconfig" ~
+ln -svf "$CLONE_DIR/.gitconfig" ~
 
 # Symlink script for updating all git repositories
 echo "Symlinking script to pull all git repositories"
-ln -svf "$HOME/dotfiles/scripts/pull_git_repos.sh" "$github"
+ln -svf "$CLONE_DIR/scripts/pull_git_repos.sh" "$github"
 
 # Symlink SSH config
-ln -svf "$HOME/dotfiles/.ssh/config" "$HOME/.ssh/config"
+ln -svf "$CLONE_DIR/.ssh/config" "$HOME/.ssh/config"
 
 # Symlink tmux config
-ln -svf "$HOME/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
+ln -svf "$CLONE_DIR/.tmux.conf" "$HOME/.tmux.conf"
