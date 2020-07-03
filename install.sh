@@ -7,8 +7,9 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-export CLONE_DIR=`pwd`
-
+echo "Here is where you've cloned dotfiles."
+export CLONE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+echo "-------------------------INSTALLATION BEGINNING-------------------------"
 # Make a "/bin" directory under HOME, for storing my own custom binaries.
 if [ ! -d "$HOME/bin" ]; then
   mkdir $HOME/bin
@@ -21,16 +22,20 @@ if [ ! -d "$HOME/.ssh" ]; then
   # directory. Examples include work configs that I don't want up on GitHub.
   mkdir $HOME/.ssh/config.d
   echo "# For SSH configs that do not live on GitHub" > $HOME/.ssh/config.d/README
+  echo "-------------------------FINISHED SSH DIR-------------------------"
 fi
 
 # Make the Documents directory under HOME.
 if [ ! -d "$HOME/Documents" ]; then
   mkdir $HOME/Documents
+  echo "-------------------------MADE 'Documents' DIR-------------------------"
+
 fi
 
 # Make the github directory under HOME.
 if [ ! -d "$HOME/github" ]; then
   mkdir $HOME/github
+  echo "-------------------------MADE 'github' DIR-------------------------"
 fi
 
 BREW_PACKAGES=(
