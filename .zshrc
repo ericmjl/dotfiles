@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export CLONE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -90,8 +91,8 @@ fi
 export ARCHFLAGS="-arch x86_64"
 
 # Source other utilities
-source $HOME/dotfiles/.path
-source $HOME/dotfiles/conda_auto_env.sh
+source $CLONE_DIR/.path
+source $CLONE_DIR/conda_auto_env.sh
 source $HOME/bin/proxy
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -102,7 +103,7 @@ source $HOME/bin/proxy
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/dotfiles/.bash_aliases
+source $CLONE_DIR/.bash_aliases
 
 
 # >>> conda initialize >>>

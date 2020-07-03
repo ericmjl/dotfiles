@@ -1,3 +1,5 @@
+export CLONE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 # If zsh is installed but bash is still the default,
 # then we go directly to zsh.
 # Otherwise, loading of bash happens as per normal.
@@ -7,11 +9,11 @@ if [[ $? == 0 ]]; then
 fi
 
 # PATH variable.
-echo "sourcing $HOME/dotfiles/.path"
-source $HOME/dotfiles/.path
+echo "sourcing $CLONE_DIR/.path"
+source $CLONE_DIR/.path
 
 # Enable conda-auto-env
-source $HOME/dotfiles/conda_auto_env.sh
+source $CLONE_DIR/conda_auto_env.sh
 
 # Enable git-completion
 source $HOME/.git-completion.bash
@@ -23,7 +25,7 @@ else
     echo "proxy not found, not sourcing"
 fi
 
-source $HOME/dotfiles/.bash_prompt
+source $CLONE_DIR/.bash_prompt
 
 # Enable colors in the terminal when doing `ls`.
 # See: http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
@@ -71,10 +73,10 @@ fi
 export MKL_THREADING_LAYER=GNU
 
 # Enable aliases in shell.
-source $HOME/dotfiles/.bash_aliases
+source $CLONE_DIR/.bash_aliases
 
 # Enable shortcuts
-source $HOME/dotfiles/.shortcuts
+source $CLONE_DIR/.shortcuts
 
 # Set CUDA path
 case $HOSTNAME in
