@@ -162,6 +162,9 @@ echo "Symlinking .bash_profile and .bashrc"
 ln -svf "$CLONE_DIR/.bash_profile" ~
 ln -svf "$CLONE_DIR/.bashrc" ~
 ln -svf "$CLONE_DIR/.zshrc" ~
+ln -svf "$CLONE_DIR/.path" ~
+ln -svf "$CLONE_DIR/.bash_aliases" ~
+ln -svf "$CLONE_DIR/.shortcuts" ~
 
 # Symlink condarc
 echo "Symlinking .condarc"

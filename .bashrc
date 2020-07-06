@@ -1,13 +1,5 @@
 export CLONE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-# If zsh is installed but bash is still the default,
-# then we go directly to zsh.
-# Otherwise, loading of bash happens as per normal.
-which zsh
-if [[ $? == 0 ]]; then
-    zsh
-fi
-
 # PATH variable.
 echo "sourcing $CLONE_DIR/.path"
 source $CLONE_DIR/.path
@@ -109,4 +101,13 @@ export EDITOR=nano
 if test -f ~/.bashrc.custom; then
     echo "Sourcing custom bashrc for this machine."
     source ~/.bashrc.custom
+fi
+
+
+# If zsh is installed but bash is still the default,
+# then we go directly to zsh.
+# Otherwise, loading of bash happens as per normal.
+which zsh
+if [[ $? == 0 ]]; then
+    zsh
 fi
