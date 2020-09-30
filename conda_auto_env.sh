@@ -38,7 +38,7 @@ function conda_auto_env() {
                 "CREATE" )
                     echo "Creating new conda environment from 'environment.yml' file found in folder..";
                     sleep 2;
-                    conda env create -q;
+                    mamba env create -q || conda env create -q;
                     conda activate $ENV;
                     break ;;
                 "IGNORE" )
