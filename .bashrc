@@ -1,4 +1,4 @@
-export CLONE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+export CLONE_DIR=$HOME/dotfiles
 
 # PATH variable.
 echo "sourcing $CLONE_DIR/.path"
