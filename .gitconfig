@@ -83,12 +83,16 @@
 [mergetool]
     prompt = false
 
-update-from = "!f() { git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --preserve-merges $1/$2; }; f"
-	proxy = http://nibr-proxy.global.nibr.novartis.net:2011
+    update-from = "!f() { git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --preserve-merges $1/$2; }; f"
+
 [credential]
 	helper = cache --timeout=99999999999
+
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+
+[pull]
+	rebase = false
