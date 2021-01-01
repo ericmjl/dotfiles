@@ -1,3 +1,5 @@
+# Install dotfiles
+# This script should be run from the dotfiles repository root.
 ln -svf `pwd`/the-dotfiles/.zshrc $HOME
 ln -svf `pwd`/the-dotfiles/.path $HOME
 ln -svf `pwd`/the-dotfiles/.shortcuts $HOME
