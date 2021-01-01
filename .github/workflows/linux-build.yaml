@@ -101,6 +101,10 @@ jobs:
           chmod +x ./scripts/install_ohmyzsh.sh
           ./scripts/install_ohmyzsh.sh
 
+      - name: Test that oh-my-zsh is installed correctly
+        run: |
+          test -f $HOME/.zshrc
+
   test-heroku-install:
     name: Test that Heroku is installed correctly
     runs-on: ubuntu-latest
@@ -136,17 +140,29 @@ jobs:
           cat ./scripts/install_dotfiles.sh
           ./scripts/install_dotfiles.sh
 
-      - name: Check that necessary files exist
-        run: |
-          test -f $HOME/.zshrc
-          test -f $HOME/.path.sh
-          test -f $HOME/.shortcuts.sh
-          test -d $HOME/shell_aliases
+      - name: Test that .zshrc exists
+        run: test -f $HOME/.zshrc
 
-          test -f $HOME/.condarc
-          test -f $HOME/.gitconfig
-          test -f $HOME/.ssh/config
-          test -f $HOME/.tmux.conf
+      - name: Test that .path.sh exists
+        run: test -f $HOME/.path.sh
+
+      - name: Test that .shortcuts.sh exists
+        run: test -f $HOME/.shortcuts.sh
+
+      - name: Test that shell aliases directory exists
+        run: test -d $HOME/shell_aliases
+
+      - name: Test that condarc file exists
+        run: test -f $HOME/.condarc
+
+      - name: Test that .gitconfig file exists
+        run: test -f $HOME/.gitconfig
+
+      - name: Test that SSH config file exists
+        run: test -f $HOME/.ssh/config
+
+      - name: Test that tmux configuration file exists
+        run: test -f $HOME/.tmux.conf
 
       - name: Switch to zsh
         run: |
