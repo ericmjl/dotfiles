@@ -13,7 +13,6 @@ BREW_PACKAGES=(
   "heroku-cli"          # for heroku apps
   "heroku/brew/heroku"  # for heroku
   "imagemagick"         # for worship-manager
-  "imagemagick"         # image processing library
   "libmagic"            # for worship-manager
   "libreoffice"         # for worship-manager
   "micro"               # micro text editor
