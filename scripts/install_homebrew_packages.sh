@@ -31,7 +31,7 @@ BREW_PACKAGES=(
 # Install homebrew packages that might not already be installed.
 echo -e "\nInstalling packages from regular brew"
 for pkg in "${BREW_PACKAGES[@]}"; do
-    if ! brew list -1 | grep -q "^${pkg}\$";
+    if ! brew list --formula | grep -q "^${pkg}\$";
     then
     echo "Installing $pkg"
     brew install "$pkg"
