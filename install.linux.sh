@@ -19,3 +19,7 @@ chmod +x ./scripts/install_anaconda.sh
 # Step 5: Install Anthony Scopatz's nanorc files
 chmod +x ./scripts/install_nanorc.sh
 ./scripts/install_nanorc.sh
+
+# Step 6: Install oh-my-zsh
+chmod +x : ./scripts/install_ohmyzsh.sh
+./scripts/install_ohmyzsh.sh
