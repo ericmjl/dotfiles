@@ -129,10 +129,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install zsh
+      - name: Install zsh and cat
         run: |
           sudo apt-get update
-          sudo apt-get install zsh
+          sudo apt-get install zsh cat
 
       - name: Run installation for oh-my-zsh
         run: |
