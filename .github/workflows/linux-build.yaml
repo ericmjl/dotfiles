@@ -83,6 +83,22 @@ jobs:
       - name: Test that nanorc is installed correctly
         run: test -d $HOME/.nano
 
+  test-heroku-install:
+    name: Test that Heroku is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./scripts/install_heroku-linux.sh
+          ./scripts/install_heroku-linux.sh
+
+      - name: Test that Heroku is installed
+        run: type heroku
+
   test-ohmyzsh-install:
     name: Test that ohmyzsh is installed correctly
     runs-on: ubuntu-latest
@@ -105,22 +121,6 @@ jobs:
         run: |
           test -f $HOME/.zshrc
 
-  test-heroku-install:
-    name: Test that Heroku is installed correctly
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Run installation script
-        run: |
-          chmod +x ./scripts/install_heroku-linux.sh
-          ./scripts/install_heroku-linux.sh
-
-      - name: Test that Heroku is installed
-        run: type heroku
-
   test-install-dotfiles:
     name: Test that dotfiles are copied to the correct place.
     runs-on: ubuntu-latest
@@ -133,6 +133,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install zsh
+
+      - name: Run installation for oh-my-zsh
+        run: |
+          chmod +x ./scripts/install_ohmyzsh.sh
+          ./scripts/install_ohmyzsh.sh
 
       - name: Run installation script
         run: |
@@ -172,4 +177,4 @@ jobs:
       - name: Switch to zsh
         run: |
           /usr/bin/zsh
-          source ~/.zshrc
+          # source ~/.zshrc
