@@ -66,7 +66,7 @@ jobs:
           chmod +x ./scripts/install_anaconda-linux.sh
           ./scripts/install_anaconda-linux.sh
 
-      - name: Test that conda is available
+      - name: Test that conda is available and that it is a function.
         run: |
           source $HOME/anaconda/bin/activate
           OUTPUT=`type conda`
