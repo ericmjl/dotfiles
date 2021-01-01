@@ -26,8 +26,8 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x ./scripts/create_directories.sh
-          ./scripts/create_directories.sh
+          chmod +x ./install_scripts/create_directories.sh
+          ./install_scripts/create_directories.sh
 
       - name: Test that the necessary directories exist
         run: |
@@ -47,11 +47,11 @@ jobs:
 
   #     - name: Run installation script
   #       run: |
-  #         chmod +x ./scripts/install_linuxbrew.sh
-  #         ./scripts/install_linuxbrew.sh
+  #         chmod +x ./install_scripts/install_linuxbrew.sh
+  #         ./install_scripts/install_linuxbrew.sh
 
-  #         chmod +x ./scripts/install_homebrew_packages.sh
-  #         ./scripts/install_homebrew_packages.sh
+  #         chmod +x ./install_scripts/install_homebrew_packages.sh
+  #         ./install_scripts/install_homebrew_packages.sh
 
   test-anaconda-install:
     name: Test that Anaconda Python is installed correctly
@@ -63,8 +63,8 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x ./scripts/install_anaconda-linux.sh
-          ./scripts/install_anaconda-linux.sh
+          chmod +x ./install_scripts/install_anaconda-linux.sh
+          ./install_scripts/install_anaconda-linux.sh
 
       # - name: Test that conda is available and that it is a function.
       #   run: |
@@ -86,8 +86,8 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x ./scripts/install_nanorc.sh
-          ./scripts/install_nanorc.sh
+          chmod +x ./install_scripts/install_nanorc.sh
+          ./install_scripts/install_nanorc.sh
 
       # https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/
       - name: Test that nanorc is installed correctly
@@ -105,8 +105,8 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x ./scripts/install_heroku-linux.sh
-          ./scripts/install_heroku-linux.sh
+          chmod +x ./install_scripts/install_heroku-linux.sh
+          ./install_scripts/install_heroku-linux.sh
 
       - name: Test that Heroku is installed
         run: |
@@ -128,8 +128,8 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x ./scripts/install_ohmyzsh.sh
-          ./scripts/install_ohmyzsh.sh
+          chmod +x ./install_scripts/install_ohmyzsh.sh
+          ./install_scripts/install_ohmyzsh.sh
 
       - name: Test that oh-my-zsh is installed correctly
         run: |
@@ -154,14 +154,14 @@ jobs:
 
       - name: Run installation for oh-my-zsh
         run: |
-          chmod +x ./scripts/install_ohmyzsh.sh
-          ./scripts/install_ohmyzsh.sh
+          chmod +x ./install_scripts/install_ohmyzsh.sh
+          ./install_scripts/install_ohmyzsh.sh
 
       - name: Run installation script
         run: |
-          chmod +x ./scripts/install_dotfiles.sh
-          cat ./scripts/install_dotfiles.sh
-          ./scripts/install_dotfiles.sh
+          chmod +x ./install_scripts/install_dotfiles.sh
+          cat ./install_scripts/install_dotfiles.sh
+          ./install_scripts/install_dotfiles.sh
 
       - name: Run tests for install_dotfiles
         run: |
