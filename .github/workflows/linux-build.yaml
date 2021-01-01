@@ -71,7 +71,7 @@ jobs:
           chmod +x ./scripts/install_nanorc.sh
           ./scripts/install_nanorc.sh
 
-  test-ohmyzsh install:
+  test-ohmyzsh-install:
     name: Test that ohmyzsh is installed correctly
     runs-on: ubuntu-latest
 
