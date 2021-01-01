@@ -31,11 +31,8 @@ jobs:
 
       - name: Test that the necessary directories exist
         run: |
-          test -d $HOME/bin
-          test -d $HOME/.ssh
-          test -d $HOME/.ssh/config.d
-          test -d $HOME/Documents
-          test -d $HOME/github
+          chmod +x ./tests/test_create_directories.sh
+          ./tests/test_create_directories.sh
 
   # test-homebrew-installs:
   #   name: Test homebrew installation with packages
@@ -110,8 +107,8 @@ jobs:
 
       - name: Test that Heroku is installed
         run: |
-          chmod +x ./tests/test_intall_heroku.sh
-          ./tests/test_intall_heroku.sh
+          chmod +x ./tests/test_install_heroku.sh
+          ./tests/test_install_heroku.sh
 
   test-ohmyzsh-install:
     name: Test that ohmyzsh is installed correctly
