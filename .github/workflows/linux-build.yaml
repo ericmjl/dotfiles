@@ -94,5 +94,5 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x: ./scripts/install_heroku-linux.sh
+          chmod +x ./scripts/install_heroku-linux.sh
           ./scripts/install_heroku-linux.sh

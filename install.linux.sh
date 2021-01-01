@@ -21,9 +21,9 @@ chmod +x ./scripts/install_nanorc.sh
 ./scripts/install_nanorc.sh
 
 # Step 6: Install oh-my-zsh
-chmod +x : ./scripts/install_ohmyzsh.sh
+chmod +x ./scripts/install_ohmyzsh.sh
 ./scripts/install_ohmyzsh.sh
 
 # Step 7: Install Heroku
-chmod +x: ./scripts/install_heroku-linux.sh
+chmod +x ./scripts/install_heroku-linux.sh
 ./scripts/install_heroku-linux.sh
