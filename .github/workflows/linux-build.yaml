@@ -81,7 +81,7 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x : ./scripts/install_ohmyzsh.sh
+          chmod +x ./scripts/install_ohmyzsh.sh
           ./scripts/install_ohmyzsh.sh
 
   test-heroku-install:
