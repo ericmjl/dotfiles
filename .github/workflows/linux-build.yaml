@@ -81,8 +81,7 @@ jobs:
 
       # https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/
       - name: Test that nanorc is installed correctly
-        run: |
-          [ -d "$HOME/.nano" ] && echo "Directory $HOME/.nano exists."
+        run: test -d $HOME/.nano
 
   test-ohmyzsh-install:
     name: Test that ohmyzsh is installed correctly
@@ -139,15 +138,15 @@ jobs:
 
       - name: Check that necessary files exist
         run: |
-          test -f ~/.zshrc
-          test -f ~/.path.sh
-          test -f ~/.shortcuts.sh
-          test -d ~/shell_aliases
+          test -f $HOME/.zshrc
+          test -f $HOME/.path.sh
+          test -f $HOME/.shortcuts.sh
+          test -d $HOME/shell_aliases
 
-          test -f ~/.condarc
-          test -f ~/.gitconfig
-          test -f ~/.ssh/config
-          test -f ~/.tmux.conf
+          test -f $HOME/.condarc
+          test -f $HOME/.gitconfig
+          test -f $HOME/.ssh/config
+          test -f $HOME/.tmux.conf
 
       - name: Switch to zsh
         run: |
