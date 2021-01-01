@@ -63,8 +63,8 @@ jobs:
 
       - name: Run installation script
         run: |
-          chmod +x ./scripts/install_anaconda.sh
-          ./scripts/install_anaconda.sh
+          chmod +x ./scripts/install_anaconda-linux.sh
+          ./scripts/install_anaconda-linux.sh
 
   test-nanorc-install:
     name: Test that nanorc is installed correctly
@@ -134,6 +134,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install zsh
 
+      - name: Diagnostic check of which zsh
+        run: which zsh
+
       - name: Run installation for oh-my-zsh
         run: |
           chmod +x ./scripts/install_ohmyzsh.sh
@@ -149,32 +152,3 @@ jobs:
         run: |
           chmod +x tests/test_install_dotfiles.sh
           tests/test_install_dotfiles.sh
-
-      # - name: Test that .zshrc exists
-      #   run: test -f $HOME/.zshrc
-
-      # - name: Test that .path.sh exists
-      #   run: test -f $HOME/.path.sh
-
-      # - name: Test that .shortcuts.sh exists
-      #   run: test -f $HOME/.shortcuts.sh
-
-      # - name: Test that shell aliases directory exists
-      #   run: test -d $HOME/shell_aliases
-
-      # - name: Test that condarc file exists
-      #   run: test -f $HOME/.condarc
-
-      # - name: Test that .gitconfig file exists
-      #   run: test -f $HOME/.gitconfig
-
-      # - name: Test that SSH config file exists
-      #   run: test -f $HOME/.ssh/config
-
-      # - name: Test that tmux configuration file exists
-      #   run: test -f $HOME/.tmux.conf
-
-      - name: Show zsh config file
-        run: |
-          unalias cat || return 0
-          cat ~/.zshrc

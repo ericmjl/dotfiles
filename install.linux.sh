@@ -16,9 +16,9 @@ chmod +x ./scripts/install_homebrew_packages.sh
 chmod -x ./scripts/install_homebrew_packages.sh
 
 # Step 4: Install Anaconda
-chmod +x ./scripts/install_anaconda.sh
-./scripts/install_anaconda.sh
-chmod -x ./scripts/install_anaconda.sh
+chmod +x ./scripts/install_anaconda-linux.sh
+./scripts/install_anaconda-linux.sh
+chmod -x ./scripts/install_anaconda-linux.sh
 
 # Step 5: Install Anthony Scopatz's nanorc files
 chmod +x ./scripts/install_nanorc.sh

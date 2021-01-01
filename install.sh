@@ -7,67 +7,6 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-echo "Here is where you've cloned dotfiles."
-export CLONE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-echo "-------------------------INSTALLATION BEGINNING-------------------------"
-# Make a "/bin" directory under HOME, for storing my own custom binaries.
-if [ ! -d "$HOME/bin" ]; then
-  mkdir $HOME/bin
-fi
-
-# Make the SSH directory under HOME.
-if [ ! -d "$HOME/.ssh" ]; then
-  mkdir $HOME/.ssh
-  # We store custom configurations that aren't version controlled in this
-  # directory. Examples include work configs that I don't want up on GitHub.
-  mkdir $HOME/.ssh/config.d
-  echo "# For SSH configs that do not live on GitHub" > $HOME/.ssh/config.d/README
-  echo "-------------------------FINISHED SSH DIR-------------------------"
-fi
-
-# Make the Documents directory under HOME.
-if [ ! -d "$HOME/Documents" ]; then
-  mkdir $HOME/Documents
-  echo "-------------------------MADE 'Documents' DIR-------------------------"
-
-fi
-
-# Make the github directory under HOME.
-if [ ! -d "$HOME/github" ]; then
-  mkdir $HOME/github
-  echo "-------------------------MADE 'github' DIR-------------------------"
-fi
-
-BREW_PACKAGES=(
-  "bash"                # might as well get an updated terminal shell
-  "git"                 # version control https://git-scm.com/
-  "bash-completion"     # bash completion for git and other things https://github.com/scop/bash-completion
-  "gcc"                 # gnu compiler collection https://gcc.gnu.org/
-  "tmux"                # window management https://tmux.github.io/
-  "wget"                # curl alternative https://www.gnu.org/software/wget/
-  "imagemagick"         # image processing library
-  "mobile-shell"        # mobile shell
-  "nano"                # get an enhanced nano
-  "gnu-sed"             # get "standard" sed that is used on Linux.
-  "tree"                # get the standard "tree" command on Linux.
-  "gnu-sed"             # get standard sed from Linux.
-  "exa"                 # an enhanced, modern ls
-  "exiftool"            # just in case
-  "heroku-cli"          # for heroku apps
-  "libreoffice"         # for worship-manager
-  "freetype"            # for worship-manager
-  "libmagic"            # for worship-manager
-  "imagemagick"         # for worship-manager
-  "heroku/brew/heroku"  # for heroku
-  "micro"               # micro text editor
-  "zsh"                 # z-shell
-  "diff-so-fancy"       # A replacement for diff: https://github.com/so-fancy/diff-so-fancy
-  "ripgrep"             # A replacement for grep: https://github.com/BurntSushi/ripgrep
-  "bat"			# A replacement for cat:  https://github.com/sharkdp/bat
-  "fd"			# A replacement for find: https://github.com/sharkdp/fd
-)
-
-source install_functions.sh
 
 # If OS is Mac OS X, then do the following:
 case "$OSTYPE" in
@@ -152,34 +91,3 @@ case "$OSTYPE" in
 
     ;;  # Necessary after each case.
 esac
-
-# Install git-completion
-echo "Installing git-completion for Bash."
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
-
-# Symlink bash_profile and bashrc to point to dotfiles
-echo "Symlinking .bash_profile and .bashrc"
-ln -svf "$CLONE_DIR/.bash_profile" ~
-ln -svf "$CLONE_DIR/.bashrc" ~
-ln -svf "$CLONE_DIR/.zshrc" ~
-ln -svf "$CLONE_DIR/.path" ~
-ln -svf "$CLONE_DIR/.bash_aliases" ~
-ln -svf "$CLONE_DIR/.shortcuts" ~
-
-# Symlink condarc
-echo "Symlinking .condarc"
-ln -svf "$CLONE_DIR/.condarc" ~
-
-# Symlink gitconfig
-echo "Symlinking .gitconfig"
-ln -svf "$CLONE_DIR/.gitconfig" ~
-
-# Symlink script for updating all git repositories
-echo "Symlinking script to pull all git repositories"
-ln -svf "$CLONE_DIR/scripts/pull_git_repos.sh" "$github"
-
-# Symlink SSH config
-ln -svf "$CLONE_DIR/.ssh/config" "$HOME/.ssh/config"
-
-# Symlink tmux config
-ln -svf "$CLONE_DIR/.tmux.conf" "$HOME/.tmux.conf"
