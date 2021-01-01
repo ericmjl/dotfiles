@@ -66,6 +66,9 @@ jobs:
           chmod +x ./scripts/install_anaconda-linux.sh
           ./scripts/install_anaconda-linux.sh
 
+      - name: Test that conda is available
+        run: type conda
+
   test-nanorc-install:
     name: Test that nanorc is installed correctly
     runs-on: ubuntu-latest
