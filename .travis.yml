@@ -1,5 +1,0 @@
-language:
-  - "bash"
-
-install:
-  - bash install.sh
