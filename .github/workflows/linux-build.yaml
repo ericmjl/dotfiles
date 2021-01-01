@@ -69,7 +69,8 @@ jobs:
       - name: Test that conda is available
         run: |
           source $HOME/anaconda/bin/activate
-          type conda
+          OUTPUT=`type conda`
+          grep -q "function" <<< $OUTPUT
 
   test-nanorc-install:
     name: Test that nanorc is installed correctly
