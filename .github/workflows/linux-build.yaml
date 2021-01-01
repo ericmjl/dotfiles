@@ -84,6 +84,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install zsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install zsh
+
       - name: Run installation script
         run: |
           chmod +x ./scripts/install_ohmyzsh.sh
@@ -118,6 +123,11 @@ jobs:
           chmod +x ./scripts/install_dotfiles.sh
           cat ./scripts/install_dotfiles.sh
           ./scripts/install_dotfiles.sh
+
+      - name: Install zsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install zsh
 
       - name: Switch to zsh
         run: |
