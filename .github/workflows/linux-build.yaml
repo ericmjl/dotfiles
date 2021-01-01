@@ -132,7 +132,7 @@ jobs:
       - name: Install zsh and cat
         run: |
           sudo apt-get update
-          sudo apt-get install zsh cat
+          sudo apt-get install zsh coreutils
 
       - name: Run installation for oh-my-zsh
         run: |
