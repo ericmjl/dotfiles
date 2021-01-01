@@ -3,8 +3,8 @@ name: Linux dotfiles build
 on: [push]
 
 jobs:
-  build:
-    name: Build dotfiles environment
+  test-master-script:
+    name: Test master script
     runs-on: ubuntu-latest
 
     steps:
@@ -15,3 +15,84 @@ jobs:
         run: |
           chmod +x install.linux.sh
           ./install.linux.sh
+
+  test-create-directories:
+    name: Test create directories
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./scripts/create_directories.sh
+          ./scripts/create_directories.sh
+
+  test-homebrew-installs:
+    name: Test homebrew installation with packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./scripts/install_linuxbrew.sh
+          ./scripts/install_linuxbrew.sh
+
+          chmod +x ./scripts/install_homebrew_packages.sh
+          ./scripts/install_homebrew_packages.sh
+
+  test-anaconda-install:
+    name: Test that Anaconda Python is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./scripts/install_anaconda.sh
+          ./scripts/install_anaconda.sh
+
+  test-nanorc-install:
+    name: Test that nanorc is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./scripts/install_nanorc.sh
+          ./scripts/install_nanorc.sh
+
+  test-ohmyzsh install:
+    name: Test that ohmyzsh is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x : ./scripts/install_ohmyzsh.sh
+          ./scripts/install_ohmyzsh.sh
+
+  test-heroku-install:
+    name: Test that Heroku is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x: ./scripts/install_heroku-linux.sh
+          ./scripts/install_heroku-linux.sh
