@@ -1,0 +1,17 @@
+name: Linux dotfiles build
+
+on: [push]
+
+jobs:
+  build:
+    name: Build dotfiles environment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x install.linux.sh
+          ./install.linux.sh
