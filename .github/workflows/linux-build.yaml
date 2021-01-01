@@ -178,5 +178,4 @@ jobs:
       - name: Switch to zsh
         run: |
           /usr/bin/zsh
-          source $HOME/.zshrc
-          reshell
+          type reshell
