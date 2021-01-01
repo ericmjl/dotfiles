@@ -3,18 +3,23 @@ name: Linux dotfiles build
 on: [push]
 
 jobs:
-  # test-master-script:
-  #   name: Test master script
-  #   runs-on: ubuntu-latest
+  test-master-script:
+    name: Test master script
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-  #     - name: Run installation script
-  #       run: |
-  #         chmod +x install.linux.sh
-  #         ./install.linux.sh
+      - name: Run installation script
+        run: |
+          chmod +x install.linux.sh
+          ./install.linux.sh
+
+      - name: Test everything
+        run: |
+          chmod +x execute_tests.sh
+          ./execute_tests.sh
 
   test-create-directories:
     name: Test create directories
