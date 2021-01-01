@@ -11,5 +11,5 @@ ln -svf `pwd`/shell_aliases $HOME
 # Then, install the other dotfiles
 ln -svf `pwd`/the-dotfiles/.condarc $HOME
 ln -svf `pwd`/the-dotfiles/.gitconfig $HOME
-ln -svf `pwd`/the-dotfiles/.ssh/config $HOME/.ssh.config
+ln -svf `pwd`/the-dotfiles/.ssh/config $HOME/.ssh/config
 ln -svf `pwd`/the-dotfiles/.tmux.conf $HOME/.tmux.conf

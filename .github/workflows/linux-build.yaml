@@ -129,8 +129,19 @@ jobs:
           sudo apt-get update
           sudo apt-get install zsh
 
+      - name: Check that necessary files exist
+        run: |
+          test -f ~/.zshrc
+          test -f ~/.path.sh
+          test -f ~/.shortcuts.sh
+          test -d ~/shell_aliases
+
+          test -f ~/.condarc
+          test -f ~/.gitconfig
+          test -f ~/.ssh/config
+          test -f ~/.tmux.conf
+
       - name: Switch to zsh
         run: |
           /usr/bin/zsh
-          type git
-          type ls
+          source ~/.zshrc
