@@ -2,16 +2,8 @@
 echo "Linking to home folder binaries."
 export PATH="$HOME/bin:$PATH"
 
-echo "Adding Tex to PATH"
-export PATH="$PATH:/Library/Tex"
-
 echo "Adding /usr/local/bin to PATH"
 export PATH="$PATH:/usr/local/bin"
-
-
-# Add in cargo for Rust
-echo "Adding cargo for rust to PATH"
-export PATH=$HOME/.cargo/bin:$PATH
 
 # Linux-specific things.
 case "$OSTYPE" in

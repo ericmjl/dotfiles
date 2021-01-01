@@ -102,6 +102,9 @@ jobs:
           chmod +x ./scripts/install_heroku-linux.sh
           ./scripts/install_heroku-linux.sh
 
+      - name: Test that Heroku is installed
+        run: type heroku
+
   test-install-dotfiles:
     name: Test that dotfiles are copied to the correct place.
     runs-on: ubuntu-latest
@@ -115,3 +118,9 @@ jobs:
           chmod +x ./scripts/install_dotfiles.sh
           cat ./scripts/install_dotfiles.sh
           ./scripts/install_dotfiles.sh
+
+      - name: Switch to zsh
+        run: |
+          /usr/bin/zsh
+          type git
+          type ls

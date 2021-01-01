@@ -90,8 +90,8 @@ fi
 export ARCHFLAGS="-arch x86_64"
 
 # Source other utilities
-source $CLONE_DIR/.path
-source $CLONE_DIR/conda_auto_env.sh
+source $HOME/.path.sh       # PATH environment variable
+source $HOME/.shortcuts.sh  # shortcuts to directories
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -106,7 +106,7 @@ source $HOME/shell_aliases/conda.sh
 source $HOME/shell_aliases/git.sh
 source $HOME/shell_aliases/jupyter.sh
 source $HOME/shell_aliases/other.sh
-source $HOME/shell_aliases/tmux .sh
+source $HOME/shell_aliases/tmux.sh
 
 
 # >>> conda initialize >>>
