@@ -17,7 +17,7 @@ done
 echo "Hooray! All files found!"
 
 DIRECTORIES_TO_TEST=(
-    "$HOME/shell_aliases"
+    "$HOME/.shell_aliases"
 )
 for directory in "${DIRECTORIES_TO_TEST[@]}"; do
     test -d $directory

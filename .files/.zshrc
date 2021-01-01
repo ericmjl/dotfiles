@@ -101,12 +101,12 @@ source $HOME/.shortcuts.sh  # shortcuts to directories
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/shell_aliases/cli.sh
-source $HOME/shell_aliases/conda.sh
-source $HOME/shell_aliases/git.sh
-source $HOME/shell_aliases/jupyter.sh
-source $HOME/shell_aliases/other.sh
-source $HOME/shell_aliases/tmux.sh
+source $HOME/.shell_aliases/cli.sh
+source $HOME/.shell_aliases/conda.sh
+source $HOME/.shell_aliases/git.sh
+source $HOME/.shell_aliases/jupyter.sh
+source $HOME/.shell_aliases/other.sh
+source $HOME/.shell_aliases/tmux.sh
 
 
 # >>> conda initialize >>>
