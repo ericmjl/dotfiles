@@ -125,7 +125,8 @@ jobs:
 
       - name: Test that oh-my-zsh is installed correctly
         run: |
-          test -f $HOME/.zshrc
+          chmod +x ./tests/test_install_ohmyzsh.sh
+          ./tests/test_install_ohmyzsh.sh
 
   test-install-dotfiles:
     name: Test that dotfiles are copied to the correct place.
