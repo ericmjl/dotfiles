@@ -68,7 +68,7 @@ jobs:
 
       - name: Test that conda is available
         run: |
-          $HOME/anaconda/bin/activate
+          source $HOME/anaconda/bin/activate
           type conda
 
   test-nanorc-install:
