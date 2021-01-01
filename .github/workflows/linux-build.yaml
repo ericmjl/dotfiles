@@ -174,7 +174,8 @@ jobs:
       - name: Test that tmux configuration file exists
         run: test -f $HOME/.tmux.conf
 
+      # Executing reshell will tell me if the right .zshrc has been installed
       - name: Switch to zsh
         run: |
           /usr/bin/zsh
-          # source ~/.zshrc
+          reshell
