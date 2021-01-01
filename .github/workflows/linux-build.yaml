@@ -176,4 +176,5 @@ jobs:
 
       - name: Show zsh config file
         run: |
-          /usr/bin/cat ~/.zshrc
+          unalias cat || return 0
+          cat ~/.zshrc
