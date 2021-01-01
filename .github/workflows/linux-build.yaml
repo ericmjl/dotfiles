@@ -71,6 +71,11 @@ jobs:
           chmod +x ./scripts/install_nanorc.sh
           ./scripts/install_nanorc.sh
 
+      # https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/
+      - name: Test that nanorc is installed correctly
+        run: |
+          [ -d "$HOME/.nano" ] && echo "Directory $HOME/.nano exists."
+
   test-ohmyzsh-install:
     name: Test that ohmyzsh is installed correctly
     runs-on: ubuntu-latest
@@ -96,3 +101,16 @@ jobs:
         run: |
           chmod +x ./scripts/install_heroku-linux.sh
           ./scripts/install_heroku-linux.sh
+
+  test-install-dotfiles:
+    name: Test that dotfiles are copied to the correct place.
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./scripts/install_dotfiles.sh
+          ./scripts/install_dotfiles.sh

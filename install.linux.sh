@@ -27,3 +27,7 @@ chmod +x ./scripts/install_ohmyzsh.sh
 # Step 7: Install Heroku
 chmod +x ./scripts/install_heroku-linux.sh
 ./scripts/install_heroku-linux.sh
+
+# Step 8: Now install zshrc from this repo
+chmod +x ./scripts/install_dotfiles.sh
+./scripts/install_dotfiles.sh

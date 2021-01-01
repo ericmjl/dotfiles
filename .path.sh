@@ -1,38 +1,36 @@
+# Setting the PATH environment variable exactly as I want it
 echo "Linking to home folder binaries."
 export PATH="$HOME/bin:$PATH"
-echo "PATH is now $PATH"
 
 echo "Adding Tex to PATH"
 export PATH="$PATH:/Library/Tex"
-echo "PATH is now $PATH"
 
 echo "Adding /usr/local/bin to PATH"
 export PATH="$PATH:/usr/local/bin"
-echo "PATH is now $PATH"
 
 
 # Add in cargo for Rust
 echo "Adding cargo for rust to PATH"
 export PATH=$HOME/.cargo/bin:$PATH
-echo "PATH is now $PATH"
 
 # Linux-specific things.
 case "$OSTYPE" in
   linux*)
     echo "Adding dat to PATH"
     export PATH=$PATH:/home/ericmjl/.dat/releases/dat-13.11.5-linux-x64
-    echo "PATH is now $PATH"
 
     # Linuxbrew stuff must take 2nd fiddle to conda,
     # so we add this first, then add conda paths.
     echo "Adding linuxbrew to PATH"
     export PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
-    echo "PATH is now $PATH" ;;
 esac
 
 # Enable conda
 echo "Adding conda to PATH"
 source $HOME/anaconda/etc/profile.d/conda.sh
 conda activate
-echo "PATH is now $PATH"
+
+# Finally, echo the state of the PATH environment variable.
+echo "State of PATH environment variable:"
+echo $PATH
