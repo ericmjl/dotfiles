@@ -1,7 +1,6 @@
 
 BREW_PACKAGES=(
   "bash-completion"     # bash completion for git and other things https://github.com/scop/bash-completion
-  "bash"                # might as well get an updated terminal shell
   "bat"			            # A replacement for cat:  https://github.com/sharkdp/bat
   "diff-so-fancy"       # A replacement for diff: https://github.com/so-fancy/diff-so-fancy
   "exa"                 # an enhanced, modern ls
@@ -11,7 +10,6 @@ BREW_PACKAGES=(
   "gcc"                 # gnu compiler collection https://gcc.gnu.org/
   "git"                 # version control https://git-scm.com/
   "gnu-sed"             # get "standard" sed that is used on Linux.
-  "gnu-sed"             # get standard sed from Linux.
   "heroku-cli"          # for heroku apps
   "heroku/brew/heroku"  # for heroku
   "imagemagick"         # for worship-manager
