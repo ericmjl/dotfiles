@@ -1,6 +1,6 @@
 # Check to see if Anaconda is installed.
 echo "checking to see if anaconda is installed."
-which -s conda
+which conda
 if [[ $? != 0 ]]; then
     echo "anaconda not installed; installing now..."
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O anaconda.sh
