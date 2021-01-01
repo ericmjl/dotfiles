@@ -34,21 +34,29 @@ jobs:
           chmod +x ./tests/test_create_directories.sh
           ./tests/test_create_directories.sh
 
-  # test-homebrew-installs:
-  #   name: Test homebrew installation with packages
-  #   runs-on: ubuntu-latest
+  test-homebrew-installs:
+    name: Test homebrew installation with packages
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-  #     - name: Run installation script
-  #       run: |
-  #         chmod +x ./install_scripts/install_linuxbrew.sh
-  #         ./install_scripts/install_linuxbrew.sh
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/install_linuxbrew.sh
+          ./install_scripts/install_linuxbrew.sh
 
-  #         chmod +x ./install_scripts/install_homebrew_packages.sh
-  #         ./install_scripts/install_homebrew_packages.sh
+          chmod +x ./install_scripts/install_homebrew_packages.sh
+          ./install_scripts/install_homebrew_packages.sh
+
+      - name: Test Homebrew package installation
+        run: |
+          chmod +x ./tests/test_install_homebrew.sh
+          ./tests/test_install_homebrew.sh
+
+          chmod +x ./tests/test_install_homebrew_packages.sh
+          ./tests/test_install_homebrew_packages.sh
 
   test-anaconda-install:
     name: Test that Anaconda Python is installed correctly
@@ -62,12 +70,6 @@ jobs:
         run: |
           chmod +x ./install_scripts/install_anaconda-linux.sh
           ./install_scripts/install_anaconda-linux.sh
-
-      # - name: Test that conda is available and that it is a function.
-      #   run: |
-      #     source $HOME/anaconda/bin/activate
-      #     OUTPUT=`type conda`
-      #     grep -q "function" <<< $OUTPUT
 
       - name: Test that conda is installed correctly
         run: |

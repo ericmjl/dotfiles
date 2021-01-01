@@ -1,0 +1,2 @@
+zsh tests/test_create_directories.sh
+zsh tests/test_install_homebrew_packages.sh
