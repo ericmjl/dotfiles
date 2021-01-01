@@ -29,6 +29,14 @@ jobs:
           chmod +x ./scripts/create_directories.sh
           ./scripts/create_directories.sh
 
+      - name: Test that the necessary directories exist
+        run: |
+          test -d $HOME/bin
+          test -d $HOME/.ssh
+          test -d $HOME/.ssh/config.d
+          test -d $HOME/Documents
+          test -d $HOME/github
+
   test-homebrew-installs:
     name: Test homebrew installation with packages
     runs-on: ubuntu-latest
