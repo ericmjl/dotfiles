@@ -113,4 +113,5 @@ jobs:
       - name: Run installation script
         run: |
           chmod +x ./scripts/install_dotfiles.sh
+          cat ./scripts/install_dotfiles.sh
           ./scripts/install_dotfiles.sh
