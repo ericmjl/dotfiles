@@ -60,8 +60,7 @@ jobs:
           chmod +x ./tests/test_install_homebrew.sh
           ./tests/test_install_homebrew.sh
 
-          chmod +x ./tests/test_install_homebrew_packages.sh
-          ./tests/test_install_homebrew_packages.sh
+          python ./tests/test_install_homebrew_packages.py
 
   test-anaconda-install:
     name: Test that Anaconda Python is installed correctly
