@@ -1,6 +1,4 @@
-export CLONE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-# Shortcuts to my directories
+# Shortcuts to my commonly used directories
 export github="$HOME/github"
 export dotfiles=$CLONE_DIR
 export anaconda="$HOME/anaconda"

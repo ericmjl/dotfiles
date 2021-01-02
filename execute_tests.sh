@@ -1,0 +1,10 @@
+zsh tests/test_create_directories.sh
+python tests/test_everything_else.py
+zsh tests/test_install_anaconda.sh
+zsh tests/test_install_dotfiles.sh
+zsh tests/test_install_heroku.sh
+python tests/test_install_homebrew_packages.py
+zsh tests/test_install_homebrew.sh
+zsh tests/test_install_nanorc.sh
+zsh tests/test_install_ohmyzsh.sh
+zsh tests/test_install_wget.sh

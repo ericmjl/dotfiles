@@ -1,0 +1,177 @@
+name: Linux dotfiles build
+
+on: [push]
+
+jobs:
+  test-master-script:
+    name: Test master script
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x install.linux.sh
+          ./install.linux.sh
+
+      - name: Test everything
+        run: |
+          chmod +x execute_tests.sh
+          ./execute_tests.sh
+
+  test-create-directories:
+    name: Test create directories
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/create_directories.sh
+          ./install_scripts/create_directories.sh
+
+      - name: Test that the necessary directories exist
+        run: |
+          chmod +x ./tests/test_create_directories.sh
+          ./tests/test_create_directories.sh
+
+  test-homebrew-installs:
+    name: Test homebrew installation with packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install base Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/install_linuxbrew.sh
+          ./install_scripts/install_linuxbrew.sh
+
+          chmod +x ./install_scripts/install_homebrew_packages.sh
+          ./install_scripts/install_homebrew_packages.sh
+
+      - name: Test Homebrew package installation
+        run: |
+          chmod +x ./tests/test_install_homebrew.sh
+          ./tests/test_install_homebrew.sh
+
+          python ./tests/test_install_homebrew_packages.py
+
+  test-anaconda-install:
+    name: Test that Anaconda Python is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/install_anaconda-linux.sh
+          ./install_scripts/install_anaconda-linux.sh
+
+      - name: Test that conda is installed correctly
+        run: |
+          chmod +x ./tests/test_install_anaconda.sh
+
+  test-nanorc-install:
+    name: Test that nanorc is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/install_nanorc.sh
+          ./install_scripts/install_nanorc.sh
+
+      # https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/
+      - name: Test that nanorc is installed correctly
+        run: |
+          chmod +x ./tests/test_install_nanorc.sh
+          ./tests/test_install_nanorc.sh
+
+  test-heroku-install:
+    name: Test that Heroku is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/install_heroku-linux.sh
+          ./install_scripts/install_heroku-linux.sh
+
+      - name: Test that Heroku is installed
+        run: |
+          chmod +x ./tests/test_install_heroku.sh
+          ./tests/test_install_heroku.sh
+
+  test-ohmyzsh-install:
+    name: Test that ohmyzsh is installed correctly
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install zsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install zsh
+
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/install_ohmyzsh.sh
+          ./install_scripts/install_ohmyzsh.sh
+
+      - name: Test that oh-my-zsh is installed correctly
+        run: |
+          chmod +x ./tests/test_install_ohmyzsh.sh
+          ./tests/test_install_ohmyzsh.sh
+
+  test-install-dotfiles:
+    name: Test that dotfiles are copied to the correct place.
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install zsh and cat
+        run: |
+          sudo apt-get update
+          sudo apt-get install zsh
+
+      - name: Diagnostic check of which zsh
+        run: which zsh
+
+      - name: Run installation for oh-my-zsh
+        run: |
+          chmod +x ./install_scripts/install_ohmyzsh.sh
+          ./install_scripts/install_ohmyzsh.sh
+
+      - name: Run installation script
+        run: |
+          chmod +x ./install_scripts/install_dotfiles.sh
+          cat ./install_scripts/install_dotfiles.sh
+          ./install_scripts/install_dotfiles.sh
+
+      - name: Run tests for install_dotfiles
+        run: |
+          chmod +x ./tests/test_install_dotfiles.sh
+          ./tests/test_install_dotfiles.sh
