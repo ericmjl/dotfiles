@@ -1,4 +1,4 @@
-source ./utils/homebrew_packages.sh || exit 1
+. ./utils/homebrew_packages.sh
 
 # Install homebrew packages that might not already be installed.
 echo -e "\nInstalling packages from regular brew"
