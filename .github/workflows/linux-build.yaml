@@ -47,6 +47,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install base Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
       - name: Run installation script
         run: |
           chmod +x ./install_scripts/install_linuxbrew.sh

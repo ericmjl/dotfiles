@@ -30,7 +30,6 @@ homebrew_commands.update(exceptions)
 
 def test_homebrew_packages_installed():
     for pkg, cmd in homebrew_commands.items():
-        # sh.type(cmd)
         result = os.system(f"type {cmd}")
         assert result == 0, f"{pkg} not found!"
 
