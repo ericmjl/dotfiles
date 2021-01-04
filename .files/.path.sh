@@ -1,4 +1,6 @@
 # Setting the PATH environment variable exactly as I want it
+echo "Original PATH"
+echo $PATH
 echo "Linking to home folder binaries."
 export PATH="$HOME/bin:$PATH"
 
@@ -8,9 +10,6 @@ export PATH="$PATH:/usr/local/bin"
 # Linux-specific things.
 case "$OSTYPE" in
   linux*)
-    echo "Adding dat to PATH"
-    export PATH=$PATH:/home/ericmjl/.dat/releases/dat-13.11.5-linux-x64
-
     # Linuxbrew stuff must take 2nd fiddle to conda,
     # so we add this first, then add conda paths.
     echo "Adding linuxbrew to PATH"
