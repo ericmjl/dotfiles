@@ -42,6 +42,5 @@ jobs:
         with:
           push: false
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/dotfiles.linux:latest
-          build-args: |
-            -f=Dockerfiles/linux.Dockerfile
-            .
+          file: Dockerfiles/linux.Dockerfile
+          context: .
