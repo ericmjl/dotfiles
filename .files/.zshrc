@@ -124,4 +124,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-precmd() { eval "$PROMPT_COMMAND" }
+#$ precmd() { eval "$PROMPT_COMMAND" }
