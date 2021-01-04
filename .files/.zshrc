@@ -125,3 +125,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 #$ precmd() { eval "$PROMPT_COMMAND" }
+
+# Finally, source in optional stuff.
+test -f ~/.zshrc.extra.zsh
+if [ $? -eq 0 ]; then
+    source ~/.zshrc.extra.zsh
+fi
