@@ -39,4 +39,8 @@ RUN ls -la $HOME
 COPY install_scripts/install_homebrew_packages.sh ./install_scripts/install_homebrew_packages.sh
 RUN bash ./install_scripts/install_homebrew_packages.sh
 
+COPY install_scripts/install_ohmyzsh.sh ./install_scripts/install_ohmyzsh.sh
+RUN zsh ./install_scripts/install_ohmyzsh.sh
+RUN zsh ./install_scripts/install_dotfiles.sh
+
 ENTRYPOINT ["/usr/bin/zsh"]
