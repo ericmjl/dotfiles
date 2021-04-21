@@ -5,6 +5,7 @@ export BREW_PACKAGES=(
   "exa"             # an enhanced, modern ls
   "fd"		    	    # A replacement for find: https://github.com/sharkdp/fd
   "gcc"             # gnu compiler collection https://gcc.gnu.org/
+  "gh"              # github CLI
   "git"             # version control https://git-scm.com/
   "gnu-sed"         # get "standard" sed that is used on Linux.
   "micro"           # micro text editor
