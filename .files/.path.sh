@@ -26,6 +26,9 @@ echo "Adding conda to PATH"
 source $HOME/anaconda/etc/profile.d/conda.sh
 conda activate
 
+# Enable flyctl
+export PATH=$HOME/.fly/bin:$PATH
+
 # Finally, echo the state of the PATH environment variable.
 echo "State of PATH environment variable:"
 echo $PATH
