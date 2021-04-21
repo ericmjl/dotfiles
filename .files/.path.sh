@@ -18,6 +18,9 @@ case "$OSTYPE" in
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 esac
 
+echo "Adding Homebrew to PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Enable conda
 echo "Adding conda to PATH"
 source $HOME/anaconda/etc/profile.d/conda.sh
