@@ -1,0 +1,46 @@
+# Workflow that builds demo docker container
+name: Build demo Docker container
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  docker-build:
+    name: Build demo Docker container
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build demo Docker container
+        id: docker-build
+        uses: docker/build-push-action@v2
+        with:
+          push: false
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/dotfiles.linux:latest
+          file: Dockerfiles/linux.Dockerfile
+          context: .
