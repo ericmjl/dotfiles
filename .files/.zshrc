@@ -129,5 +129,9 @@ precmd() { eval "$PROMPT_COMMAND" }
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/ericmjl/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
+
+echo ""
+echo "Welcome to your fancy schmancy shell, Eric!"
+
 # starship init: https://starship.rs/guide/#🚀-installation
 eval "$(starship init zsh)"
