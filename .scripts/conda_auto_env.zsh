@@ -11,6 +11,9 @@
 # Deactivates env when exciting the directory. If the env doesn't exist yet,
 # offer to create it from file.
 
+# This function depends on the use of `fd`,
+# which is a fast, cross-platform replacement for built-in `find` written in Rust.
+
 # Installation: Copy chpwd() to .zshrc or save the whole script as a file and
 # source it in .zshrc, e.g. by placing it in /usr/local/bin or by symlinking
 # conda_auto_env there and then adding `source conda_auto_env`.
@@ -23,8 +26,7 @@
 # bash will always auto-change back to that file's env.
 
 chpwd() {
-  # On Linux replace `find -E` with `f -regextype posix-extended`.
-  FILE="$(find -E . -maxdepth 1 -regex '.*(env(ironment)?|requirements)\.ya?ml' -print -quit)"
+  FILE=$(fd --max-depth 1 --glob 'env*.y*ml')
   if [[ -e $FILE ]]; then
     ENV=$(sed -n 's/name: //p' $FILE)
     # Check if env is already active.

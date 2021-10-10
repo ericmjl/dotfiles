@@ -86,9 +86,6 @@ else
   export EDITOR='nano'
 fi
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
-
 # Source other utilities
 source $HOME/.path.sh       # PATH environment variable
 source $HOME/.shortcuts.sh  # shortcuts to directories
@@ -107,6 +104,9 @@ source $HOME/.shell_aliases/git.sh
 source $HOME/.shell_aliases/jupyter.sh
 source $HOME/.shell_aliases/other.sh
 source $HOME/.shell_aliases/tmux.sh
+
+# Set conda-auto-env
+source $HOME/.scripts/conda_auto_env.zsh
 
 
 # >>> conda initialize >>>
