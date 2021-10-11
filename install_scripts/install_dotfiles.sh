@@ -15,5 +15,8 @@ mkdir -p $HOME/.ssh
 ln -svf `pwd`/.files/.ssh/config $HOME/.ssh/config
 ln -svf `pwd`/.files/.tmux.conf $HOME/.tmux.conf
 
+# Install scripts
+ln -svf `pwd`/.scripts $HOME
+
 # Finally, install shell aliases
 ln -svf `pwd`/.shell_aliases $HOME

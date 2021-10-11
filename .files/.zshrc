@@ -86,9 +86,6 @@ else
   export EDITOR='nano'
 fi
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
-
 # Source other utilities
 source $HOME/.path.sh       # PATH environment variable
 source $HOME/.shortcuts.sh  # shortcuts to directories
@@ -108,6 +105,9 @@ source $HOME/.shell_aliases/jupyter.sh
 source $HOME/.shell_aliases/other.sh
 source $HOME/.shell_aliases/tmux.sh
 
+# Set conda-auto-env
+source $HOME/.scripts/conda_auto_env.zsh
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -125,9 +125,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 precmd() { eval "$PROMPT_COMMAND" }
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/ericmjl/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # starship init: https://starship.rs/guide/#🚀-installation
 eval "$(starship init zsh)"
