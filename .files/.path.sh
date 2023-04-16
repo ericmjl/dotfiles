@@ -29,6 +29,10 @@ conda activate
 # Enable flyctl
 export PATH=$HOME/.fly/bin:$PATH
 
+# Enable pipx-based tools
+export PATH=$HOME/.local/bin:$PATH
+
+
 # Finally, echo the state of the PATH environment variable.
 echo "State of PATH environment variable:"
 echo $PATH
