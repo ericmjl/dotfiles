@@ -16,4 +16,5 @@ export BREW_PACKAGES=(
   "tree"            # get the standard "tree" command on Linux.
   "wget"            # curl alternative https://www.gnu.org/software/wget/
   "zsh"             # z-shell
+  "pass"            # password manager https://www.passwordstore.org/
 )
