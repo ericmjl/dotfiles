@@ -108,6 +108,9 @@ source $HOME/.shell_aliases/tmux.sh
 # Set conda-auto-env
 source $HOME/.scripts/conda_auto_env.zsh
 
+# Set environment variables - these are never checked in!
+# Do it only if .env is available.
+[ -f $HOME/dotfiles/.env ] && source $HOME/dotfiles/.env
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -128,3 +131,5 @@ precmd() { eval "$PROMPT_COMMAND" }
 
 # starship init: https://starship.rs/guide/#🚀-installation
 eval "$(starship init zsh)"
+
+export PATH=$PATH:/Users/ericmjl/.pixi/bin
