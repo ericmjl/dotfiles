@@ -35,6 +35,11 @@ chmod +x ./install_scripts/install_heroku-linux.sh
 ./install_scripts/install_heroku-linux.sh
 chmod -x ./install_scripts/install_heroku-linux.sh
 
+# Step 8: Configure Git
+chmod +x ./install_scripts/configure_git.sh
+./install_scripts/configure_git.sh
+chmod -x ./install_scripts/configure_git.sh
+
 # Step 8: Now install zshrc from this repo
 chmod +x ./install_scripts/install_dotfiles.sh
 ./install_scripts/install_dotfiles.sh
