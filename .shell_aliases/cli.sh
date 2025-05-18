@@ -1,10 +1,10 @@
 # Command line tool shell aliases
 
 alias ..='cd ..'
-which exa
+which eza
 if [[ $? == 0 ]]; then
-    alias ls='exa --long --git -a --header --group'
-    alias tree='exa --tree --level=2 --long -a --header --git'
+    alias ls='eza --long --git -a --header --group'
+    alias tree='eza --tree --level=2 --long -a --header --git'
 fi
 alias l='ls'
 alias reshell="source $HOME/.zshrc"
