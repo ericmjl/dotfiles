@@ -45,4 +45,9 @@ precmd() { eval "$PROMPT_COMMAND" }
 # starship init: https://starship.rs/guide/#🚀-installation
 eval "$(starship init zsh)"
 
-export PATH=$PATH:/Users/ericmjl/.pixi/bin
+export PATH=$PATH:$HOME/.pixi/bin
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+# End of LM Studio CLI section
+
